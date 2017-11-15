@@ -76,6 +76,11 @@ std::shared_ptr<CActor> CSpartyFactory::Create()
     headt->GetRightEye()->SetCenter(Point(17, 16));
     headt->SetInterocularDistance(30);
 
+	auto flag = make_shared<CImageDrawable>(L"Spartan Flag", L"images/msu_flag.png");
+	flag->SetCenter(Point(39, 9));
+	flag->SetPosition(Point(-150, -110));
+	rarm->AddChild(flag);
+
     actor->AddDrawable(lleg);
     actor->AddDrawable(rleg);
     actor->AddDrawable(torso);
@@ -83,6 +88,7 @@ std::shared_ptr<CActor> CSpartyFactory::Create()
     actor->AddDrawable(rarm);
     actor->AddDrawable(headb);
     actor->AddDrawable(headt);
+	actor->AddDrawable(flag);
 
     return actor;
 }

@@ -102,6 +102,10 @@ std::shared_ptr<CActor> CHaroldFactory::Create()
     rhand->AddPoint(Point(11, -2));
     rarm->AddChild(rhand);
 
+	auto flag = make_shared<CImageDrawable>(L"Canadian Flag", L"images/flag.png");
+	flag->SetCenter(Point(39, 9));
+	flag->SetPosition(Point(-90, -196));
+	rhand->AddChild(flag);
 
     actor->AddDrawable(larm);
     actor->AddDrawable(rarm);
@@ -113,6 +117,7 @@ std::shared_ptr<CActor> CHaroldFactory::Create()
     actor->AddDrawable(vest);
     actor->AddDrawable(headb);
     actor->AddDrawable(headt);
+	actor->AddDrawable(flag);
 
     return actor;
 }

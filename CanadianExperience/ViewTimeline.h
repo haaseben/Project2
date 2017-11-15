@@ -50,6 +50,9 @@ private:
     /// Flag to indicate we are moving the pointer
     bool      mMovingPointer = false;
 
+	///timer identifier
+	UINT_PTR mTimer;
+
 public:
     afx_msg void OnMouseMove(UINT nFlags, CPoint point);
     afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
@@ -57,6 +60,10 @@ public:
     afx_msg void OnEditDeletekeyframe();
     afx_msg void OnFileSaveas();
     afx_msg void OnFileOpen32782();
+	afx_msg void OnPlayPlay();
+	afx_msg void OnPlayPlayfrombeginning();
+	afx_msg void OnPlayStop();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
 
 

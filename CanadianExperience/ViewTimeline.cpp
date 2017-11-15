@@ -64,6 +64,10 @@ BEGIN_MESSAGE_MAP(CViewTimeline, CScrollView)
     ON_COMMAND(ID_EDIT_DELETEKEYFRAME, &CViewTimeline::OnEditDeletekeyframe)
     ON_COMMAND(ID_FILE_SAVEAS, &CViewTimeline::OnFileSaveas)
     ON_COMMAND(ID_FILE_OPEN32782, &CViewTimeline::OnFileOpen32782)
+	ON_COMMAND(ID_PLAY_PLAY, &CViewTimeline::OnPlayPlay)
+	ON_COMMAND(ID_PLAY_PLAYFROMBEGINNING, &CViewTimeline::OnPlayPlayfrombeginning)
+	ON_COMMAND(ID_PLAY_STOP, &CViewTimeline::OnPlayStop)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -284,3 +288,31 @@ void CViewTimeline::OnEditDeletekeyframe()
      wstring filename = dlg.GetPathName();
      GetPicture()->Load(filename);
 }
+
+
+ void CViewTimeline::OnPlayPlay()
+ {
+	 double time= GetPicture()->GetAnimationTime();
+	 mTimer = SetTimer((int)time, 2000, 0);
+ }
+
+
+ void CViewTimeline::OnPlayPlayfrombeginning()
+ {
+	 mTimer = SetTimer(1, 2000, 0);
+ }
+
+
+ void CViewTimeline::OnPlayStop()
+ {
+	 KillTimer(mTimer);
+ }
+
+
+ void CViewTimeline::OnTimer(UINT_PTR nIDEvent)
+ {
+	 auto picture = GetPicture();
+	 picture->SetAnimationTime(picture->GetAnimationTime());
+	 CWnd::OnTimer(nIDEvent);
+	 __super::OnTimer(nIDEvent);
+ }

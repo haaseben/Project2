@@ -129,6 +129,12 @@ BEGIN
     BEGIN
         MENUITEM "&About The Canadian Experience...", ID_APP_ABOUT
     END
+    POPUP "&Play"
+    BEGIN
+        MENUITEM "Play",                        ID_PLAY_PLAY
+        MENUITEM "Play From Beginning",         ID_PLAY_PLAYFROMBEGINNING
+        MENUITEM "Stop",                        ID_PLAY_STOP
+    END
 END
 
 
