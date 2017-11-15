@@ -294,7 +294,7 @@ void CViewTimeline::OnEditDeletekeyframe()
  {
 	 double time= GetPicture()->GetAnimationTime();
 	 int frame = GetPicture()->GetTimeline()->GetFrameRate();
-	 mTimer = SetTimer((int)time, frame, nullptr);
+	 mTimer = SetTimer(time, frame, nullptr);
  }
 
 
@@ -314,7 +314,7 @@ void CViewTimeline::OnEditDeletekeyframe()
  void CViewTimeline::OnTimer(UINT_PTR nIDEvent)
  {
 	 auto picture = GetPicture();
-	 picture->SetAnimationTime(picture->GetAnimationTime());
+	 picture->SetAnimationTime(picture->GetTimeline()->GetCurrentTime());
 	 CWnd::OnTimer(nIDEvent);
 	 __super::OnTimer(nIDEvent);
  }
