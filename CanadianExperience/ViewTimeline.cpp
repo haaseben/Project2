@@ -293,13 +293,15 @@ void CViewTimeline::OnEditDeletekeyframe()
  void CViewTimeline::OnPlayPlay()
  {
 	 double time= GetPicture()->GetAnimationTime();
-	 mTimer = SetTimer((int)time, 2000, 0);
+	 int frame = GetPicture()->GetTimeline()->GetFrameRate();
+	 mTimer = SetTimer((int)time, frame, nullptr);
  }
 
 
  void CViewTimeline::OnPlayPlayfrombeginning()
  {
-	 mTimer = SetTimer(1, 2000, 0);
+	 int frame = GetPicture()->GetTimeline()->GetFrameRate();
+	 mTimer = SetTimer(1, frame, nullptr);
  }
 
 

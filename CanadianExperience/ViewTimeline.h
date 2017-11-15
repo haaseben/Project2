@@ -53,6 +53,7 @@ private:
 	///timer identifier
 	UINT_PTR mTimer;
 
+
 public:
     afx_msg void OnMouseMove(UINT nFlags, CPoint point);
     afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
