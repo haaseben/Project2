@@ -1,7 +1,7 @@
 /**
  * \file MainFrm.h
  *
- * \author 
+ * \author Ben Haase
  *
  * The program main frame.
  */
