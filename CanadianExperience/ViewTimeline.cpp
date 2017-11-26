@@ -310,7 +310,10 @@ void CViewTimeline::OnEditDeletekeyframe()
 	 KillTimer(mTimer);
  }
 
-
+ /**
+ *  Handle timer events
+ * \param nIDEvent The timer event ID
+ */
  void CViewTimeline::OnTimer(UINT_PTR nIDEvent)
  {
 	 auto picture = GetPicture();

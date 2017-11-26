@@ -114,6 +114,7 @@
     <ClInclude Include="AnimChannelPoint.h" />
     <ClInclude Include="CanadianExperience.h" />
     <ClInclude Include="Drawable.h" />
+    <ClInclude Include="DrawableAdapter.h" />
     <ClInclude Include="HaroldFactory.h" />
     <ClInclude Include="HeadTop.h" />
     <ClInclude Include="ImageDrawable.h" />
@@ -142,6 +143,7 @@
     <ClCompile Include="AnimChannelPoint.cpp" />
     <ClCompile Include="CanadianExperience.cpp" />
     <ClCompile Include="Drawable.cpp" />
+    <ClCompile Include="DrawableAdapter.cpp" />
     <ClCompile Include="HaroldFactory.cpp" />
     <ClCompile Include="HeadTop.cpp" />
     <ClCompile Include="ImageDrawable.cpp" />
