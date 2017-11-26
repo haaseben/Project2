@@ -289,22 +289,60 @@ void CViewTimeline::OnEditDeletekeyframe()
      GetPicture()->Load(filename);
 }
 
-
+ /**
+ * Starts timer from current time if called
+ */
  void CViewTimeline::OnPlayPlay()
  {
-	 double time= GetPicture()->GetAnimationTime();
+
+	 double currentTime = GetPicture()->GetTimeline()->GetCurrentTime();
+
+	 GetPicture()->SetAnimationTime(currentTime);
+	 UpdateObserver();
+
 	 int frame = GetPicture()->GetTimeline()->GetFrameRate();
-	 mTimer = SetTimer(time, frame, nullptr);
+	 mTimer = SetTimer(1, 1000/frame, nullptr);
+
+	 /*
+	 * Initialize the elapsed time system
+	 */
+	 LARGE_INTEGER time, freq;
+	 QueryPerformanceCounter(&time);
+	 QueryPerformanceFrequency(&freq);
+
+	 mLastTime = time.QuadPart;
+	 mTimeFreq = double(freq.QuadPart);
+
  }
 
-
+ /**
+ * Starts timer from beginning if called
+ */
  void CViewTimeline::OnPlayPlayfrombeginning()
  {
+	 GetPicture()->SetAnimationTime(0);
+	 UpdateObserver();
+
+
 	 int frame = GetPicture()->GetTimeline()->GetFrameRate();
-	 mTimer = SetTimer(1, frame, nullptr);
+	 mTimer = SetTimer(1, 1000/frame, nullptr);
+
+	
+	 /*
+	 * Initialize the elapsed time system
+	 */
+	 LARGE_INTEGER time, freq;
+	 QueryPerformanceCounter(&time);
+	 QueryPerformanceFrequency(&freq);
+
+	 mLastTime = time.QuadPart;
+	 mTimeFreq = double(freq.QuadPart);
+
  }
 
-
+ /**
+ * Kills timer if called
+ */
  void CViewTimeline::OnPlayStop()
  {
 	 KillTimer(mTimer);
@@ -316,8 +354,28 @@ void CViewTimeline::OnEditDeletekeyframe()
  */
  void CViewTimeline::OnTimer(UINT_PTR nIDEvent)
  {
+	
+
+	 LARGE_INTEGER time;
+	 QueryPerformanceCounter(&time);
+	 long long diff = time.QuadPart - mLastTime;
+	 double elapsed = double(diff) / mTimeFreq;
+	 mLastTime = time.QuadPart;
+
 	 auto picture = GetPicture();
-	 picture->SetAnimationTime(picture->GetTimeline()->GetCurrentTime());
+	 double currentTime = GetPicture()->GetTimeline()->GetCurrentTime()+elapsed;
+	 double duration = GetPicture()->GetTimeline()->GetDuration();
+
+	 if (currentTime <= duration)
+	 {
+		 picture->SetAnimationTime(currentTime);
+	 }
+
+	 else
+	 {
+		 KillTimer(mTimer);
+	 }
+
 	 CWnd::OnTimer(nIDEvent);
 	 __super::OnTimer(nIDEvent);
  }
