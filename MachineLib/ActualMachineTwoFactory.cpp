@@ -1,6 +1,14 @@
 #include "stdafx.h"
 #include "ActualMachineTwoFactory.h"
+#include "Shape.h"
+#include "Rod.h"
+#include "Arm.h"
+#include "Motor.h"
+#include "Piston.h"
+#include "Lever.h"
+#include "Gear.h"
 
+using namespace Gdiplus;
 /**
 * Constructor
 */

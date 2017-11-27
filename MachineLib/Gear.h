@@ -20,6 +20,8 @@ public:
 	CGear(int radius,int teeth);
 	virtual ~CGear();
 
+	void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y) ;
+
 private:
 	///radius of the gear
 	int mRadius;

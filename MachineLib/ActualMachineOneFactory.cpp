@@ -8,6 +8,7 @@
 #include "Lever.h"
 #include "Gear.h"
 
+using namespace Gdiplus;
 /**
 * Constructor
 */
@@ -50,19 +51,19 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 
 	//motor->GetSource()->AddSink(gear1->GetSink());
 
-	//// A post that holds the larger gear
-	//auto gear2post = make_shared<CShape>();
-	//gear2post->Rectangle(-10, 0, 20, 30);
-	//gear2post->SetPosition(gear1->GetX() + 55, -40);
-	//gear2post->SetColor(Color::DarkGreen);
-	//machine->AddPart(gear2post);
+	// A post that holds the larger gear
+	auto gear2post = make_shared<CShape>();
+	gear2post->Rectangle(-10, 0, 20, 30);
+	gear2post->SetLocation(gear1->GetX() + 55, -40);
+	gear2post->SetColor(Color::DarkGreen);
+	machine->AddComponent(gear2post);
 
-	//// The second gear
-	//// Radius=40pixels, 20 teeth
-	//auto gear2 = make_shared<CGear>(40, 20);
-	//gear2->SetImage(L"images/hammered-copper.png");
-	//gear2->SetPosition(gear1->GetX() + 55, gear1->GetY());
-	//machine->AddPart(gear2);
+	// The second gear
+	// Radius=40pixels, 20 teeth
+	auto gear2 = make_shared<CGear>(40, 20);
+	gear2->SetImage(L"images/hammered-copper.png");
+	gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
+	machine->AddComponent(gear2);
 
 	//gear1->Drive(gear2, 0.1);
 

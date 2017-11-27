@@ -19,5 +19,7 @@ class CRod :
 public:
 	CRod();
 	virtual~CRod();
+
+	void CRod::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 };
 

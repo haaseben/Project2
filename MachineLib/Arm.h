@@ -19,5 +19,7 @@ class CArm :
 public:
 	CArm();
 	virtual ~CArm();
+
+	void CArm::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 };
 

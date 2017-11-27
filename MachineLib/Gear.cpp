@@ -5,15 +5,31 @@ const double ToothDepth = 5;     ///< Depth of a tooth in pixels
 const double ToothWidth = 0.33;  ///< Width of a tooth at the top as fraction of tooth pitch
 const double ToothSlope = 0.1;   ///< Fraction of pitch where the tooth slopes up or down
 
-
+/**
+* Constructor
+* \param radius Radius of gear
+* \param teeth number of teeth on gear
+*/
 CGear::CGear(int radius,int teeth)
 {
 	mRadius = radius;
 	mNumTeeth = teeth;
+	
+}
+
+/** Destructor */
+CGear::~CGear()
+{
+}
+
+
+void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
+{
+	
 	int PI2 = 3.14 * 2;
 	// Where the tooth starts in the arc
 	double toothStart = 1.0 - ToothWidth - ToothSlope * 2;
-	double innerRadius = radius - ToothDepth;
+	double innerRadius = mRadius - ToothDepth;
 
 	for (int t = 0; t < mNumTeeth; t++)
 	{
@@ -25,13 +41,9 @@ CGear::CGear(int radius,int teeth)
 
 		AddPoint(innerRadius * cos(angle1), innerRadius * sin(angle1));
 		AddPoint(innerRadius * cos(angle2), innerRadius * sin(angle2));
-		AddPoint(radius * cos(angle3), radius * sin(angle3));
-		AddPoint(radius * cos(angle4), radius * sin(angle4));
+		AddPoint(mRadius * cos(angle3), mRadius * sin(angle3));
+		AddPoint(mRadius * cos(angle4), mRadius * sin(angle4));
 		AddPoint(innerRadius * cos(angle5), innerRadius * sin(angle5));
 	}
-}
-
-
-CGear::~CGear()
-{
+	DrawPolygon(graphics, x, y);
 }

@@ -13,6 +13,7 @@
 
 /**
 * Constructor
+* \param machinenum Sets the machine to be built
 */
 CActualMachine::CActualMachine(int machinenum):mMachineNum(machinenum)
 {
@@ -34,6 +35,9 @@ CActualMachine::CActualMachine(int machinenum):mMachineNum(machinenum)
 
 }
 
+/**
+* Constructor
+*/
 CActualMachine::CActualMachine()
 {
 

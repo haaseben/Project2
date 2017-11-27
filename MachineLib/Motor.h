@@ -29,7 +29,7 @@ public:
 
 	void MotorSpeed(double speed);
 
-	void CMotor::DrawPart(Gdiplus::Graphics *graphics, int x, int y) override;
+	void CMotor::DrawPart(Gdiplus::Graphics *graphics, int x, int y) ;
 
 private:
 	///current time

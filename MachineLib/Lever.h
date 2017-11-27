@@ -19,5 +19,7 @@ class CLever :
 public:
 	CLever();
 	virtual ~CLever();
+
+	void CLever::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 };
 

@@ -27,7 +27,7 @@ double CMotor::GetRotation()
 
 void CMotor::SetTime(double time)
 {
-
+	mTime = time;
 }
 
 
@@ -38,8 +38,9 @@ void CMotor::MotorSpeed(double speed)
 
 void CMotor::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
-	int wid = 50;
-	int hit = 20;
-	SetLocation(x, y);
-	Rectangle(x, y,wid,hit);
+	CenteredSquare(100);
+	SetImage(L"images/electric-wheel.png");
+	DrawPolygon(graphics, x, y);
+	SetImage(L"images/motor-frame.png");
+	DrawPolygon(graphics, x, y);
 }
