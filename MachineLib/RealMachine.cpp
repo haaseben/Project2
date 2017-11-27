@@ -12,6 +12,7 @@
 */
 CRealMachine::CRealMachine()
 {
+	mActualMachine = make_shared<CActualMachine>(1);
 }
 
 /** Destructor */
@@ -29,12 +30,10 @@ void CRealMachine::DrawMachine(Gdiplus::Graphics *graphics)
 	mActualMachine->DrawActualMachine(graphics,mLocation.X,mLocation.Y);
 }
 
-
 void CRealMachine::SetMachineFrame(int frame)
 {
 	mFrameNum = frame;
 }
-
 
 void CRealMachine::SetSpeed(double speed)
 {
@@ -45,7 +44,6 @@ void CRealMachine::SetFrameRate(double rate)
 {
 	mFrameRate = rate;
 }
-
 
 void CRealMachine::SetMachineNumber(int seed)
 {

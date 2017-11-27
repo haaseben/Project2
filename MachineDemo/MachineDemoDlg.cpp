@@ -51,6 +51,7 @@ void CMachineDemoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_PLAY, mPlayButton);
 	DDX_Control(pDX, IDC_STOP, mStopButton);
 	DDX_Control(pDX, IDC_RW, mRwButton);
+	DDX_Control(pDX, IDC_CONTROLS, mControls);
 }
 
 /** \cond */
@@ -108,7 +109,14 @@ BOOL CMachineDemoDlg::OnInitDialog()
     CRect rect;
     GetClientRect(&rect);
 
-    mMachineView.Create(this, CRect(0, 0, rect.Width(), rect.Height() - BottomBorder), 1, WS_VISIBLE);
+	CRect playRect;
+	mControls.GetWindowRect(&playRect);
+	ScreenToClient(&playRect);
+
+	int height = playRect.top;
+	int padding = playRect.left;
+
+	mMachineView.Create(this, CRect(padding, padding, rect.Width() - padding, height - padding), 1, WS_VISIBLE | WS_CHILD);
 
     UpdateUI();
 

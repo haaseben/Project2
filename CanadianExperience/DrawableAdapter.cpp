@@ -5,7 +5,7 @@
 */
 #include "stdafx.h"
 #include "DrawableAdapter.h"
-#include "Machine.h"
+#include "RealMachine.h"
 /**
 * Constructor
 */

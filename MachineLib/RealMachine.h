@@ -39,7 +39,7 @@ public:
 	* Draw the machine at the currently specified location
 	* \param graphics GDI+ Graphics object
 	*/
-	virtual void DrawMachine(Gdiplus::Graphics *graphics);
+	void DrawMachine(Gdiplus::Graphics *graphics)override;
 
 	/**
 	* Set the current machine animation frame

@@ -85,7 +85,8 @@ BOOL CMachineDemoView::Create(CWnd* pParentWnd, const RECT& rect, UINT nID, DWOR
     int rootY = rect.bottom - 100;
     mMachine->SetLocation(rootX, rootY);
 
-    return CWnd::Create(VIEWER_CLASSNAME, _T(""), dwStyle, rect, pParentWnd, nID);
+	return CWnd::CreateEx(WS_EX_CLIENTEDGE, VIEWER_CLASSNAME, _T(""), dwStyle, rect, pParentWnd, nID);
+    //return CWnd::Create(VIEWER_CLASSNAME, _T(""), dwStyle, rect, pParentWnd, nID);
 }
 
 /** \cond */

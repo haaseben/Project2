@@ -27,9 +27,11 @@ public:
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
 	*/
-	void DrawPart(Gdiplus::Graphics *graphics, int x, int y);
+	virtual void DrawPart(Gdiplus::Graphics *graphics, int x, int y)=0;
 
 	void SetFrame(int frame);
+
+	void SetLocation(int x, int y);
 
 private:
 	///pointer to actual machine

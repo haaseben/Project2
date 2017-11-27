@@ -8,12 +8,26 @@
 #include "RealMachine.h"
 #include "Component.h"
 #include "Motor.h"
+#include "ActualMachineOneFactory.h"
+#include "ActualMachineTwoFactory.h"
 
 /**
 * Constructor
 */
-CActualMachine::CActualMachine(int machinenum) :mMachineNum(machinenum)
+CActualMachine::CActualMachine(int machinenum):mMachineNum(machinenum)
 {
+	//if (machinenum == 1)
+	//{
+		ActualMachineOneFactory machineone;
+		auto machine1 = machineone.Create();
+	//}
+
+	/*else if (machinenum == 2)
+	{
+		CActualMachineTwoFactory machinetwo;
+		auto m2 = machinetwo.Create();
+	}*/
+
 }
 
 /** Destructor */

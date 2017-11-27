@@ -9,7 +9,7 @@
 #pragma once
 #include "Drawable.h"
 
-class CMachine;
+class CRealMachine;
 
 /** Implements the top of a characters head,
 * which has special functionality.
@@ -33,6 +33,6 @@ public:
 	void SetMachine(int num);
 
 private:
-	CMachine* mMachine;
+	CRealMachine* mMachine;
 };
 

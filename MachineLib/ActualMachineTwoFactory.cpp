@@ -18,7 +18,7 @@ CActualMachineTwoFactory::~CActualMachineTwoFactory()
 */
 std::shared_ptr<CActualMachine> CActualMachineTwoFactory::Create()
 {
-	shared_ptr<CActualMachine> machine = make_shared<CActualMachine>(2);
+	auto machine = make_shared<CActualMachine>(2);
 
 
 

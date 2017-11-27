@@ -19,5 +19,11 @@ class CShape :
 public:
 	CShape();
 	virtual ~CShape();
-};
 
+	void DrawPart(Gdiplus::Graphics *graphics, int x, int y);
+
+private:
+	Gdiplus::Point mRotationOrigin;
+	double mRotation;
+	double mSpeed;
+};

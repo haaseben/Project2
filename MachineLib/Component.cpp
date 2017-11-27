@@ -19,13 +19,14 @@ void CComponent::SetMachine(CActualMachine *machine)
 	mActualMachine = machine;
 }
 
-void CComponent::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
-{
-	mLocation = Gdiplus::Point(x, y);
-	DrawPolygon(graphics, mLocation.X, mLocation.Y);
-}
+
 
 void CComponent::SetFrame(int frame)
 {
 
+}
+
+void CComponent::SetLocation(int x, int y)
+{
+	mLocation = Gdiplus::Point(x,y);
 }

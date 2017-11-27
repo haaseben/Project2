@@ -68,4 +68,5 @@ public:
 
 	double mTime = 0;		///< Running time
 	afx_msg void OnBnClickedRw();
+	CStatic mControls;
 };

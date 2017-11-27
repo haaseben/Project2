@@ -9,6 +9,9 @@
 #pragma once
 #include <memory>
 #include<vector>
+
+class CActualMachineOneFactory;
+class CActualMachineTwoFactory;
 class CRealMachine;
 class CComponent;
 class CMotor;
@@ -44,4 +47,3 @@ private:
 
 	std::shared_ptr<CMotor> mMotor;
 };
-

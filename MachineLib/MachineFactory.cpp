@@ -10,6 +10,7 @@
 #include "MachineFactory.h"
 #include "Machine.h"
 #include "MachineStandin.h"
+#include "RealMachine.h"
 
 
 using namespace std;
@@ -36,6 +37,9 @@ CMachineFactory::~CMachineFactory()
  */
 std::shared_ptr<CMachine> CMachineFactory::CreateMachine()
 {
-	return make_shared<CMachine>();
-}
+	auto machine = make_shared<CMachine>();
 
+
+
+	return machine;
+}

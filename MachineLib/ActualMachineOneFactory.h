@@ -7,6 +7,7 @@
 */
 #pragma once
 #include "ActualMachineFactory.h"
+class CShape;
 
 /**
 *  factory for building machine one.
