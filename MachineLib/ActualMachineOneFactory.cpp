@@ -67,19 +67,19 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 
 	//gear1->Drive(gear2, 0.1);
 
-	//// The arm attached to the second gear
-	//// 50 pixels long
-	//auto arm = make_shared<CArm>(50);
-	//arm->SetImage(L"images/arm1.png");
-	//arm->SetPosition(gear2->GetPosition());
-	//machine->AddPart(arm);
+	// The arm attached to the second gear
+	// 50 pixels long
+	auto arm = make_shared<CArm>(50);
+	arm->SetImage(L"images/arm1.png");
+	arm->SetLocation(gear2->GetX(),gear2->GetY());
+	machine->AddComponent(arm);
 
 	//gear2->GetSource()->AddSink(arm->GetSink());
 
-	//// The column that holds the lever
-	//auto column = make_shared<CShape>();
-	//column->Rectangle(-20, -40, 40, 220);
-	//column->SetImage(L"images/column.png");
+	// The column that holds the lever
+	auto column = make_shared<CShape>();
+	column->Rectangle(-20, -40, 40, 220);
+	column->SetImage(L"images/column.png");
 
 	//// The lever
 	//auto lever = make_shared<CLever>(400);

@@ -17,9 +17,13 @@ class CArm :
 	public CComponent
 {
 public:
-	CArm();
+	CArm(int length);
 	virtual ~CArm();
 
 	void CArm::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
+
+private:
+	///length of  the arm
+	double mLength;
 };
 

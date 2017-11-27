@@ -4,8 +4,9 @@
 /**
 * Constructor
 */
-CArm::CArm()
+CArm::CArm(int length)
 {
+	mLength = length;
 }
 
 /** Destructor */

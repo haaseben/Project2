@@ -19,5 +19,7 @@ class CPiston :
 public:
 	CPiston();
 	virtual ~CPiston();
+
+	void CPiston::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 };
 
