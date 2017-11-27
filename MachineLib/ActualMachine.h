@@ -37,7 +37,7 @@ public:
 	void SetTime(double time);
 
 private:
-	///pointer to real machine 
+	///pointer to real machine construct
 	CRealMachine* mRealMachine;
 
 	///list of components in machine
@@ -46,5 +46,6 @@ private:
 	///machine to draw
 	int mMachineNum;
 
+	///pointer to motor for time and speed
 	std::shared_ptr<CMotor> mMotor;
 };

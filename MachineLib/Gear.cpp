@@ -10,7 +10,7 @@ CGear::CGear(int radius,int teeth)
 {
 	mRadius = radius;
 	mNumTeeth = teeth;
-
+	int PI2 = 3.14 * 2;
 	// Where the tooth starts in the arc
 	double toothStart = 1.0 - ToothWidth - ToothSlope * 2;
 	double innerRadius = radius - ToothDepth;
