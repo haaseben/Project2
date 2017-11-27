@@ -23,6 +23,7 @@ class CActualMachine
 {
 public:
 	CActualMachine(int machinenum);
+	CActualMachine();
 	virtual ~CActualMachine();
 
 	/**

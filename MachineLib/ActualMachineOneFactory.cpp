@@ -25,7 +25,7 @@ ActualMachineOneFactory::~ActualMachineOneFactory()
 */
 std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 {
-	auto machine = make_shared<CActualMachine>(1);
+	auto machine = make_shared<CActualMachine>();
 
 
 	// The base

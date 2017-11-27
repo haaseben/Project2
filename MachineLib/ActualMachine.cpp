@@ -16,17 +16,26 @@
 */
 CActualMachine::CActualMachine(int machinenum):mMachineNum(machinenum)
 {
-	//if (machinenum == 1)
-	//{
+	////if (machinenum == 1)
+	////{
 		ActualMachineOneFactory machineone;
 		auto machine1 = machineone.Create();
-	//}
+		for (auto component : machine1->mComponents)
+		{
+			this->AddComponent(component);
+		}
+	////}
 
-	/*else if (machinenum == 2)
-	{
-		CActualMachineTwoFactory machinetwo;
-		auto m2 = machinetwo.Create();
-	}*/
+	///*else if (machinenum == 2)
+	//{
+	//	CActualMachineTwoFactory machinetwo;
+	//	auto m2 = machinetwo.Create();
+	//}*/
+
+}
+
+CActualMachine::CActualMachine()
+{
 
 }
 
@@ -47,7 +56,7 @@ void CActualMachine::DrawActualMachine(Gdiplus::Graphics *graphics,int x, int y)
 void CActualMachine::AddComponent(std::shared_ptr<CComponent> comp)
 {
 	mComponents.push_back(comp);
-	comp->SetMachine(this);
+	//comp->SetMachine(this);
 }
 
 void CActualMachine::SetTime(double time)

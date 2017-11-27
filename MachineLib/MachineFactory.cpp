@@ -37,9 +37,5 @@ CMachineFactory::~CMachineFactory()
  */
 std::shared_ptr<CMachine> CMachineFactory::CreateMachine()
 {
-	auto machine = make_shared<CMachine>();
-
-
-
-	return machine;
+	return make_shared<CRealMachine>();
 }

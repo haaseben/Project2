@@ -21,13 +21,13 @@ public:
 	CComponent();
 	virtual ~CComponent();
 
-	virtual void SetMachine(CActualMachine *machine);
+	void SetMachine(CActualMachine *machine);
 
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
 	*/
-	virtual void DrawPart(Gdiplus::Graphics *graphics, int x, int y)=0;
+	virtual void DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 
 	void SetFrame(int frame);
 
