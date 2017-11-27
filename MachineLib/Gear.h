@@ -17,7 +17,14 @@ class CGear :
 	public CComponent
 {
 public:
-	CGear();
+	CGear(int radius,int teeth);
 	virtual ~CGear();
+
+private:
+	///radius of the gear
+	int mRadius;
+
+	///num of teeth on the gear
+	int mNumTeeth;
 };
 

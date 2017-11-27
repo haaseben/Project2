@@ -35,18 +35,18 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	base->SetImage(L"images/base.png");
 	machine->AddComponent(base);
 
-	//// The motor
-	//auto motor = make_shared<CMotor>();
-	//motor->SetPosition(100, -38);
-	//motor->SetSpeed(1.0);
-	//machine->AddPart(motor);
+	// The motor
+	auto motor = make_shared<CMotor>();
+	motor->SetLocation(100, -38);
+	motor->MotorSpeed(1.0);
+	machine->AddComponent(motor);
 
-	//// The gear driven by the motor
-	//// Radius=20pixels, 10 teeth
-	//auto gear1 = make_shared<CGear>(20, 10);
-	//gear1->SetImage(L"images/iron.png");
-	//gear1->SetPosition(100, -38 - CMotor::Size / 2);
-	//machine->AddPart(gear1);
+	// The gear driven by the motor
+	// Radius=20pixels, 10 teeth
+	auto gear1 = make_shared<CGear>(20, 10);
+	gear1->SetImage(L"images/iron.png");
+	gear1->SetLocation(100, -38 - 20 / 2);
+	machine->AddComponent(gear1);
 
 	//motor->GetSource()->AddSink(gear1->GetSink());
 

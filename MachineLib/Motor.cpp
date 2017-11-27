@@ -33,5 +33,5 @@ void CMotor::SetTime(double time)
 
 void CMotor::MotorSpeed(double speed)
 {
-
+	mSpeed = speed;
 }

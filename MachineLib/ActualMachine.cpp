@@ -56,7 +56,7 @@ void CActualMachine::DrawActualMachine(Gdiplus::Graphics *graphics,int x, int y)
 void CActualMachine::AddComponent(std::shared_ptr<CComponent> comp)
 {
 	mComponents.push_back(comp);
-	//comp->SetMachine(this);
+	comp->SetMachine(this);
 }
 
 void CActualMachine::SetTime(double time)

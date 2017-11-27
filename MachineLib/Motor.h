@@ -36,6 +36,9 @@ private:
 	///current revolutions
 	double mRevs;
 
+	///current speed
+	double mSpeed;
+
 	///pointer to actual machine
 	CActualMachine* mActualMachine;
 };
