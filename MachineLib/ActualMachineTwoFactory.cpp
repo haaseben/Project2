@@ -1,3 +1,8 @@
+/**
+* \file ActualMachineTwoFactory.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "ActualMachineTwoFactory.h"
 #include "Shape.h"

@@ -1,3 +1,8 @@
+/**
+* \file Arm.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Arm.h"
 

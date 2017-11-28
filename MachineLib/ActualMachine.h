@@ -23,7 +23,6 @@ class CActualMachine
 {
 public:
 	CActualMachine(int machinenum);
-	CActualMachine();
 	virtual ~CActualMachine();
 
 	/**
@@ -35,6 +34,10 @@ public:
 	void AddComponent(std::shared_ptr<CComponent> comp);
 
 	void SetTime(double time);
+
+	void SetMotor(std::shared_ptr<CMotor> motor) { mMotor = motor; }
+
+	std::shared_ptr<CMotor> GetMotor() { return mMotor; }
 
 private:
 	///pointer to real machine construct

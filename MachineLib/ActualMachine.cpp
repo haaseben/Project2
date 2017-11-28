@@ -17,29 +17,6 @@
 */
 CActualMachine::CActualMachine(int machinenum):mMachineNum(machinenum)
 {
-	////if (machinenum == 1)
-	////{
-		ActualMachineOneFactory machineone;
-		auto machine1 = machineone.Create();
-		for (auto component : machine1->mComponents)
-		{
-			this->AddComponent(component);
-		}
-	////}
-
-	///*else if (machinenum == 2)
-	//{
-	//	CActualMachineTwoFactory machinetwo;
-	//	auto m2 = machinetwo.Create();
-	//}*/
-
-}
-
-/**
-* Constructor
-*/
-CActualMachine::CActualMachine()
-{
 
 }
 
@@ -65,5 +42,5 @@ void CActualMachine::AddComponent(std::shared_ptr<CComponent> comp)
 
 void CActualMachine::SetTime(double time)
 {
-
+	mMotor->SetTime(time);
 }

@@ -1,3 +1,8 @@
+/**
+* \file Component.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Component.h"
 #include "ActualMachine.h"

@@ -1,3 +1,8 @@
+/**
+* \file ActualMachineOneFactory.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "ActualMachineOneFactory.h"
 #include "Shape.h"
@@ -7,6 +12,7 @@
 #include "Piston.h"
 #include "Lever.h"
 #include "Gear.h"
+#include "Rotor.h"
 
 using namespace Gdiplus;
 /**
@@ -26,7 +32,7 @@ ActualMachineOneFactory::~ActualMachineOneFactory()
 */
 std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 {
-	auto machine = make_shared<CActualMachine>();
+	auto machine = make_shared<CActualMachine>(1);
 
 
 	// The base
@@ -38,48 +44,58 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 
 	// The motor
 	auto motor = make_shared<CMotor>();
-	motor->SetLocation(100, -38);
+	motor->CenteredSquare(75);
+	motor->SetLocation(150, -85);
 	motor->MotorSpeed(1.0);
+	motor->SetImage(L"images/electric-wheel.png");
+
+	auto rotor = make_shared<CRotor>();
+	rotor->Rectangle(100,-38,100,100);
+	rotor->SetLocation(100, -38);
+	rotor->SetImage(L"images/motor-frame.png");
+
+	machine->SetMotor(motor);
 	machine->AddComponent(motor);
+	machine->AddComponent(rotor);
 
 	// The gear driven by the motor
 	// Radius=20pixels, 10 teeth
 	auto gear1 = make_shared<CGear>(20, 10);
 	gear1->SetImage(L"images/iron.png");
-	gear1->SetLocation(100, -38 - 20 / 2);
+	gear1->SetLocation(150, -70 - 20 / 2);
 	machine->AddComponent(gear1);
 
-	//motor->GetSource()->AddSink(gear1->GetSink());
+	////motor->GetSource()->AddSink(gear1->GetSink());
 
 	// A post that holds the larger gear
 	auto gear2post = make_shared<CShape>();
 	gear2post->Rectangle(-10, 0, 20, 30);
-	gear2post->SetLocation(gear1->GetX() + 55, -40);
+	gear2post->SetLocation(gear1->GetX()+50 , -38);
 	gear2post->SetColor(Color::DarkGreen);
 	machine->AddComponent(gear2post);
 
-	// The second gear
-	// Radius=40pixels, 20 teeth
-	auto gear2 = make_shared<CGear>(40, 20);
-	gear2->SetImage(L"images/hammered-copper.png");
-	gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
-	machine->AddComponent(gear2);
+	//// The second gear
+	//// Radius=40pixels, 20 teeth
+	//auto gear2 = make_shared<CGear>(40, 20);
+	//gear2->SetImage(L"images/hammered-copper.png");
+	//gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
+	//machine->AddComponent(gear2);
 
 	//gear1->Drive(gear2, 0.1);
 
-	// The arm attached to the second gear
-	// 50 pixels long
-	auto arm = make_shared<CArm>(50);
-	arm->SetImage(L"images/arm1.png");
-	arm->SetLocation(gear2->GetX(),gear2->GetY());
-	machine->AddComponent(arm);
+	//// The arm attached to the second gear
+	//// 50 pixels long
+	//auto arm = make_shared<CArm>(50);
+	//arm->SetImage(L"images/arm1.png");
+	//arm->SetLocation(gear2->GetX(),gear2->GetY());
+	//machine->AddComponent(arm);
 
 	//gear2->GetSource()->AddSink(arm->GetSink());
 
-	// The column that holds the lever
-	auto column = make_shared<CShape>();
-	column->Rectangle(-20, -40, 40, 220);
-	column->SetImage(L"images/column.png");
+	//// The column that holds the lever
+	//auto column = make_shared<CShape>();
+	//column->Rectangle(-20, -40, 40, 220);
+	//column->SetImage(L"images/column.png");
 
 	//// The lever
 	//auto lever = make_shared<CLever>(400);

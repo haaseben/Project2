@@ -1,3 +1,8 @@
+/**
+* \file Piston.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Piston.h"
 

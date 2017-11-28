@@ -1,3 +1,8 @@
+/**
+* \file Gear.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Gear.h"
 
@@ -45,5 +50,5 @@ void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 		AddPoint(mRadius * cos(angle4), mRadius * sin(angle4));
 		AddPoint(innerRadius * cos(angle5), innerRadius * sin(angle5));
 	}
-	DrawPolygon(graphics, x, y);
+	DrawPolygon(graphics, x+GetX(), y+GetY());
 }

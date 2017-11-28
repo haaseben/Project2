@@ -1,3 +1,8 @@
+/**
+* \file Rod.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Rod.h"
 

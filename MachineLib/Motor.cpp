@@ -1,3 +1,8 @@
+/**
+* \file Motor.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Motor.h"
 #include "ActualMachine.h"
@@ -28,6 +33,9 @@ double CMotor::GetRotation()
 void CMotor::SetTime(double time)
 {
 	mTime = time;
+	SetRotation(time);
+
+	mRotatingSource->UpdateRotation(time);
 }
 
 
@@ -38,9 +46,6 @@ void CMotor::MotorSpeed(double speed)
 
 void CMotor::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
-	CenteredSquare(100);
-	SetImage(L"images/electric-wheel.png");
-	DrawPolygon(graphics, x, y);
-	SetImage(L"images/motor-frame.png");
-	DrawPolygon(graphics, x, y);
+	DrawPolygon(graphics,x+GetX(),y+GetY());
 }
+

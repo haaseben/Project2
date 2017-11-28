@@ -6,6 +6,8 @@
 #include "stdafx.h"
 #include "RealMachine.h"
 #include "ActualMachine.h"
+#include "ActualMachineOneFactory.h"
+#include "ActualMachineTwoFactory.h"
 
 /**
 * Constructor
@@ -33,6 +35,8 @@ void CRealMachine::DrawMachine(Gdiplus::Graphics *graphics)
 void CRealMachine::SetMachineFrame(int frame)
 {
 	mFrameNum = frame;
+	double time = GetTime();
+	mActualMachine->SetTime(time);
 }
 
 void CRealMachine::SetSpeed(double speed)
@@ -48,6 +52,17 @@ void CRealMachine::SetFrameRate(double rate)
 void CRealMachine::SetMachineNumber(int seed)
 {
 	mMachineNum=seed;
+	if (seed = 1)
+	{
+		ActualMachineOneFactory machineone;
+		mActualMachine = machineone.Create();
+	}
+
+	else if (seed = 2)
+	{
+		CActualMachineTwoFactory machinetwo;
+		mActualMachine = machinetwo.Create();
+	}
 }
 
 int CRealMachine::GetMachineNumber()
@@ -57,6 +72,16 @@ int CRealMachine::GetMachineNumber()
 
 double CRealMachine::GetTime()
 {
-	mStartTime = mFrameNum / mFrameRate;
-	return mStartTime;
+	int i = 0;
+	double time;
+	if (i = 0)
+	{
+		i++;
+		mStartTime = mFrameNum / mFrameRate;
+		time = mStartTime;
+	}
+	
+	time= mFrameNum / mFrameRate;
+
+	return time;
 }

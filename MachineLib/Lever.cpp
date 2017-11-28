@@ -1,3 +1,8 @@
+/**
+* \file Lever.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "Lever.h"
 

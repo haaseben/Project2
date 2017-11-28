@@ -8,6 +8,7 @@
 */
 #pragma once
 #include "Component.h"
+#include "RotatingSource.h"
 
 class CActualMachine;
 /**
@@ -43,5 +44,7 @@ private:
 
 	///pointer to actual machine
 	CActualMachine* mActualMachine;
+
+	std::shared_ptr<CRotatingSource> mRotatingSource;
 };
 
