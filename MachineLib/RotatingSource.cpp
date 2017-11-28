@@ -5,7 +5,7 @@
 */
 #include "stdafx.h"
 #include "RotatingSource.h"
-
+#include "RotatingSink.h"
 /**
 * Constructor
 */
@@ -22,4 +22,9 @@ CRotatingSource::~CRotatingSource()
 void CRotatingSource::UpdateRotation(double rotation)
 {
 	
+}
+
+void CRotatingSource::AddRotatingSink(CRotatingSink* rotate)
+{
+
 }

@@ -28,5 +28,10 @@ private:
 
 	///num of teeth on the gear
 	int mNumTeeth;
+
+	///pointer to what this rotates
+	std::shared_ptr<CRotatingSource> mRotatingSource;
+
+
 };
 

@@ -8,7 +8,8 @@
 */
 #pragma once
 #include "Polygon.h"
-
+#include "RotatingSink.h"
+#include "RotatingSource.h"
 class CActualMachine;
 
 /**

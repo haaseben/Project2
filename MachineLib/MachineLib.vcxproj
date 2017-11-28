@@ -119,6 +119,7 @@
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="RealMachine.cpp" />
     <ClCompile Include="Rod.cpp" />
+    <ClCompile Include="RotatingSink.cpp" />
     <ClCompile Include="RotatingSource.cpp" />
     <ClCompile Include="Rotor.cpp" />
     <ClCompile Include="Shape.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="RealMachine.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Rod.h" />
+    <ClInclude Include="RotatingSink.h" />
     <ClInclude Include="RotatingSource.h" />
     <ClInclude Include="Rotor.h" />
     <ClInclude Include="Shape.h" />

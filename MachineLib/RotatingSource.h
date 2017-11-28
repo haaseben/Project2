@@ -7,6 +7,7 @@
 *
 */
 #pragma once
+class CRotatingSink;
 
 /*
 * Class that represents a rotating source.
@@ -20,6 +21,10 @@ public:
 
 	void UpdateRotation(double rotation);
 
+	void AddRotatingSink(CRotatingSink* rotate);
 
+private:
+	///pointer to sink this rotates
+	CRotatingSink* mRotatingSink;
 };
 
