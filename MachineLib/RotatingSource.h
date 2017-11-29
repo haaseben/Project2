@@ -28,6 +28,8 @@ public:
 
 	void AddRotatingSink(CRotatingSink* rotate);
 
+	void SetSpeed(double speed);
+
 private:
 	///pointer to sink this rotates
 	CRotatingSink* mRotatingSink=nullptr;

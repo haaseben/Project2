@@ -30,6 +30,7 @@ public:
 
 	void MatchSourceRotation(double rotation);
 
+	void CRotatingSink::MatchSourceSpeed(double speed);
 
 private:
 	///pointer to source that rotates this sink

@@ -32,3 +32,11 @@ void CRotatingSource::AddRotatingSink(CRotatingSink* rotate)
 	mRotatingSink = rotate;
 	rotate->AddRotatingSource(this);
 }
+
+void CRotatingSource::SetSpeed(double speed)
+{
+	if (mRotatingSink != nullptr)
+	{
+		mRotatingSink;
+	}
+}

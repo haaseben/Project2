@@ -36,6 +36,8 @@ public:
 
 	void CGear::SetRotation(double rotation);
 
+	void ExamineSink(CRotatingSink rotating);
+
 private:
 	///radius of the gear
 	int mRadius;

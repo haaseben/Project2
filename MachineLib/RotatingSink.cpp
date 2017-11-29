@@ -24,3 +24,8 @@ void CRotatingSink::MatchSourceRotation(double rotation)
 {
 	GetComponent()->SetRotation(rotation);
 }
+
+void CRotatingSink::MatchSourceSpeed(double speed)
+{
+	GetComponent()->SetRotation(speed);
+}

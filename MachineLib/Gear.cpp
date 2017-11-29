@@ -72,3 +72,8 @@ void CGear::SetRotation(double rotation)
 	CComponent::SetRotation(rotation);
 	mRotatingSource.UpdateRotation(rotation);
 }
+
+void ExamineSink(CRotatingSink rotating)
+{
+
+}

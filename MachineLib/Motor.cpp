@@ -37,6 +37,7 @@ void CMotor::SetTime(double time)
 	SetRotation(time*mSpeed);
 
 	mSource.UpdateRotation(time*mSpeed);
+	mSource.SetSpeed(mSpeed);
 }
 
 
