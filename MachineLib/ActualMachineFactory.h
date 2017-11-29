@@ -18,7 +18,7 @@ public:
 	CActualMachineFactory(const CActualMachineFactory &) = delete;
 	virtual ~CActualMachineFactory();
 
-	/** Create the actor
+	/** Create the machine
 	* \returns New actor object */
 	virtual std::shared_ptr<CActualMachine> Create() = 0;
 

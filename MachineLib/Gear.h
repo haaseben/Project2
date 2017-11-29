@@ -56,5 +56,7 @@ private:
 
 	///phase at where the gear is in rotation
 	double mPhase;
+
+	double mFirstCall=0;
 };
 

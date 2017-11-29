@@ -62,15 +62,23 @@ void CGear::MeshGear(std::shared_ptr<CGear> gear, double offset)
 
 	mRotation = -gear->GetRotation() * GetNumTeeth() / gear->GetNumTeeth() + mPhase;
 
-	mRotatingSource.UpdateRotation(mRotation);
-
 	gear->SetRotation(mRotation);
 }
 
 void CGear::SetRotation(double rotation)
 {
-	CComponent::SetRotation(rotation);
-	mRotatingSource.UpdateRotation(rotation);
+	if (mRadius == 20)
+	{
+		CComponent::SetRotation(rotation);
+		mRotatingSource.UpdateRotation(rotation);
+		mFirstCall++;
+	}
+	
+	else
+	{
+		CComponent::SetRotation(-rotation);
+		mRotatingSource.UpdateRotation(-rotation);
+	}
 }
 
 void ExamineSink(CRotatingSink rotating)

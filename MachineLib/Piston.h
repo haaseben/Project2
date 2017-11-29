@@ -8,13 +8,14 @@
 */
 #pragma once
 #include "Component.h"
+#include "Negotiate.h"
 
 /**
 * Class that represents a piston for a machine.
 *
 */
 class CPiston :
-	public CComponent
+	public CNegotiate
 {
 public:
 	/** Copy constructor disabled */
@@ -23,6 +24,8 @@ public:
 	void operator=(const CPiston &) = delete;
 	CPiston();
 	virtual ~CPiston();
+
+	void CPiston::Negotiate(CRod *rod);
 
 	void CPiston::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 };

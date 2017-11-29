@@ -1,5 +1,5 @@
 /**
-* \file RealMachine.h
+* \file ActualMachine.h
 *
 * \author Ben Haase
 *

@@ -22,3 +22,8 @@ void CPiston::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
 	DrawPolygon(graphics, x, y);
 }
+
+void CPiston::Negotiate(CRod *rod)
+{
+
+}

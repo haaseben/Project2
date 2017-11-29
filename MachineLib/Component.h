@@ -10,6 +10,10 @@
 #include "Polygon.h"
 #include "RotatingSink.h"
 #include "RotatingSource.h"
+#include "RodEndSink.h"
+#include "RodEndSource.h"
+#include "LeverEndSink.h"
+#include "LeverEndSource.h"
 class CSink;
 class CSource;
 class CActualMachine;
@@ -45,8 +49,6 @@ public:
 	int GetX() { return mLocation.X; }
 
 	int GetY() { return mLocation.Y; }
-
-	
 
 private:
 	///pointer to actual machine

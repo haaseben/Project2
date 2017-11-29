@@ -18,6 +18,7 @@ class ActualMachineOneFactory :
 public:
 	/** Copy constructor disabled */
 	ActualMachineOneFactory(const ActualMachineOneFactory &) = delete;
+
 	ActualMachineOneFactory();
 	virtual ~ActualMachineOneFactory();
 

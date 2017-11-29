@@ -9,8 +9,10 @@
 /**
 * Constructor
 */
-CLever::CLever()
+CLever::CLever(double length)
 {
+	mLength = length;
+	mLeverEndSink.SetComponent(this);
 }
 
 /** Destructor */
@@ -20,5 +22,10 @@ CLever::~CLever()
 
 void CLever::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
-	DrawPolygon(graphics, x, y);
+	DrawPolygon(graphics, x+GetX(), y+GetY());
+}
+
+void CLever::Negotiate(CRod *rod)
+{
+
 }
