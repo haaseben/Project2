@@ -17,6 +17,10 @@ class CRod :
 	public CComponent
 {
 public:
+	/** Copy constructor disabled */
+	CRod(const CRod &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CRod &) = delete;
 	CRod();
 	virtual~CRod();
 

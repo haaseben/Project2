@@ -10,6 +10,8 @@
 #include "Polygon.h"
 #include "RotatingSink.h"
 #include "RotatingSource.h"
+class CSink;
+class CSource;
 class CActualMachine;
 
 /**
@@ -19,10 +21,16 @@ class CComponent :
 	public CPolygon
 {
 public:
+	/** Assignment operator disabled */
+	void operator=(const CComponent &) = delete;
+	/** Copy constructor disabled */
+	CComponent(const CComponent &) = delete;
 	CComponent();
 	virtual ~CComponent();
 
 	void SetMachine(CActualMachine *machine);
+
+	virtual void CComponent::SetRotation(double rotation);
 
 	/**
 	* Draw the component at the currently specified location
@@ -38,6 +46,8 @@ public:
 
 	int GetY() { return mLocation.Y; }
 
+	
+
 private:
 	///pointer to actual machine
 	CActualMachine* mActualMachine=nullptr;
@@ -50,5 +60,6 @@ private:
 
 	///rotation of component
 	double mRotation;
+
 };
 

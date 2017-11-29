@@ -13,7 +13,7 @@ CRotatingSource::CRotatingSource()
 {
 }
 
-
+/** Destructor */
 CRotatingSource::~CRotatingSource()
 {
 }
@@ -21,10 +21,14 @@ CRotatingSource::~CRotatingSource()
 
 void CRotatingSource::UpdateRotation(double rotation)
 {
-	
+	if (mRotatingSink != nullptr)
+	{
+		mRotatingSink->MatchSourceRotation(rotation);
+	}
 }
 
 void CRotatingSource::AddRotatingSink(CRotatingSink* rotate)
 {
-
+	mRotatingSink = rotate;
+	rotate->AddRotatingSource(this);
 }

@@ -17,6 +17,10 @@ class CPiston :
 	public CComponent
 {
 public:
+	/** Copy constructor disabled */
+	CPiston(const CPiston &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CPiston &) = delete;
 	CPiston();
 	virtual ~CPiston();
 

@@ -33,6 +33,7 @@ public:
 	void SetMachine(int num);
 
 private:
+	///machine to be drawn
 	CMachine* mMachine;
 };
 

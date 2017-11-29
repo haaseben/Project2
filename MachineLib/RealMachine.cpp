@@ -42,6 +42,7 @@ void CRealMachine::SetMachineFrame(int frame)
 void CRealMachine::SetSpeed(double speed)
 {
 	mSpeed = speed;
+	mActualMachine->SetSpeed(speed);
 }
 
 void CRealMachine::SetFrameRate(double rate)
@@ -74,12 +75,6 @@ double CRealMachine::GetTime()
 {
 	int i = 0;
 	double time;
-	if (i = 0)
-	{
-		i++;
-		mStartTime = mFrameNum / mFrameRate;
-		time = mStartTime;
-	}
 	
 	time= mFrameNum / mFrameRate;
 

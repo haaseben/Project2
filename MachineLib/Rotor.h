@@ -15,6 +15,8 @@ class CRotor :
 	public CComponent
 {
 public:
+	/** Copy constructor disabled */
+	CRotor(const CRotor &) = delete;
 	CRotor();
 	virtual ~CRotor();
 

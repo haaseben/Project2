@@ -19,18 +19,9 @@ CGear::CGear(int radius,int teeth)
 {
 	mRadius = radius;
 	mNumTeeth = teeth;
-	
-}
+	mRotatingSink.SetComponent(this);
+	mRotatingSource.SetComponent(this);
 
-/** Destructor */
-CGear::~CGear()
-{
-}
-
-
-void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
-{
-	
 	int PI2 = 3.14 * 2;
 	// Where the tooth starts in the arc
 	double toothStart = 1.0 - ToothWidth - ToothSlope * 2;
@@ -50,5 +41,34 @@ void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 		AddPoint(mRadius * cos(angle4), mRadius * sin(angle4));
 		AddPoint(innerRadius * cos(angle5), innerRadius * sin(angle5));
 	}
+}
+
+/** Destructor */
+CGear::~CGear()
+{
+}
+
+
+void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
+{
 	DrawPolygon(graphics, x+GetX(), y+GetY());
+}
+
+void CGear::MeshGear(std::shared_ptr<CGear> gear, double offset)
+{
+	mPhase = offset;
+
+	GetSource()->AddRotatingSink(gear->GetSink());
+
+	mRotation = -gear->GetRotation() * GetNumTeeth() / gear->GetNumTeeth() + mPhase;
+
+	mRotatingSource.UpdateRotation(mRotation);
+
+	gear->SetRotation(mRotation);
+}
+
+void CGear::SetRotation(double rotation)
+{
+	CComponent::SetRotation(rotation);
+	mRotatingSource.UpdateRotation(rotation);
 }

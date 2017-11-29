@@ -19,6 +19,10 @@ class CMotor :
 	public CComponent
 {
 public:
+	/** Copy constructor disabled */
+	CMotor(const CMotor &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CMotor &) = delete;
 	CMotor();
 	virtual ~CMotor();
 
@@ -31,6 +35,8 @@ public:
 	void MotorSpeed(double speed);
 
 	void CMotor::DrawPart(Gdiplus::Graphics *graphics, int x, int y) ;
+
+	CRotatingSource* GetSource() { return &mSource; }
 
 private:
 	///current time
@@ -45,7 +51,7 @@ private:
 	///pointer to actual machine
 	CActualMachine* mActualMachine;
 
-	///pointer to what this rotates
-	std::shared_ptr<CRotatingSource> mRotatingSource;
+	///source construct for this motor
+	CRotatingSource mSource;
 };
 

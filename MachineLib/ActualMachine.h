@@ -22,6 +22,10 @@ using namespace std;
 class CActualMachine
 {
 public:
+	/** Assignment operator disabled */
+	void operator=(const CActualMachine &) = delete;
+	/** Copy constructor disabled */
+	CActualMachine(const CActualMachine &) = delete;
 	CActualMachine(int machinenum);
 	virtual ~CActualMachine();
 
@@ -38,6 +42,8 @@ public:
 	void SetMotor(std::shared_ptr<CMotor> motor) { mMotor = motor; }
 
 	std::shared_ptr<CMotor> GetMotor() { return mMotor; }
+
+	void CActualMachine::SetSpeed(double speed);
 
 private:
 	///pointer to real machine construct

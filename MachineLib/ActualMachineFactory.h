@@ -14,6 +14,8 @@
 class CActualMachineFactory
 {
 public:
+	/** Copy constructor disabled */
+	CActualMachineFactory(const CActualMachineFactory &) = delete;
 	virtual ~CActualMachineFactory();
 
 	/** Create the actor

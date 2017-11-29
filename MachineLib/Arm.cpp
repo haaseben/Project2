@@ -12,6 +12,7 @@
 CArm::CArm(int length)
 {
 	mLength = length;
+	mSink.SetComponent(this);
 }
 
 /** Destructor */

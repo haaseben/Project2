@@ -44,3 +44,8 @@ void CActualMachine::SetTime(double time)
 {
 	mMotor->SetTime(time);
 }
+
+void CActualMachine::SetSpeed(double speed)
+{
+	mMotor->MotorSpeed(speed);
+}

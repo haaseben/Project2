@@ -7,15 +7,20 @@
 *
 */
 #pragma once
+#include "Source.h"
 class CRotatingSink;
 
 /*
 * Class that represents a rotating source.
 *
 */
-class CRotatingSource
+class CRotatingSource: public CSource
 {
 public:
+	/** Copy constructor disabled */
+	CRotatingSource(const CRotatingSource &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CRotatingSource &) = delete;
 	CRotatingSource();
 	virtual ~CRotatingSource();
 
@@ -25,6 +30,6 @@ public:
 
 private:
 	///pointer to sink this rotates
-	CRotatingSink* mRotatingSink;
+	CRotatingSink* mRotatingSink=nullptr;
 };
 

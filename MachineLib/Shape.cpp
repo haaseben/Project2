@@ -11,6 +11,7 @@
 */
 CShape::CShape()
 {
+	mSink.SetComponent(this);
 }
 
 /** Destructor */

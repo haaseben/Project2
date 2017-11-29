@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ActualMachine.cpp" />
+    <ClCompile Include="ActualMachineFactory.cpp" />
+    <ClCompile Include="ActualMachineOneFactory.cpp" />
+    <ClCompile Include="ActualMachineTwoFactory.cpp" />
+    <ClCompile Include="Arm.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Gear.cpp" />
+    <ClCompile Include="Lever.cpp" />
+    <ClCompile Include="Motor.cpp" />
+    <ClCompile Include="Piston.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="RealMachine.cpp" />
+    <ClCompile Include="Rod.cpp" />
+    <ClCompile Include="Rotor.cpp" />
+    <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Machine.cpp" />
+    <ClCompile Include="MachineFactory.cpp" />
+    <ClCompile Include="MachineLib.cpp" />
+    <ClCompile Include="MachineDlg.cpp" />
+    <ClCompile Include="MachineStandin.cpp" />
+    <ClCompile Include="Sink.cpp" />
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActualMachine.h" />
+    <ClInclude Include="ActualMachineFactory.h" />
+    <ClInclude Include="ActualMachineOneFactory.h" />
+    <ClInclude Include="ActualMachineTwoFactory.h" />
+    <ClInclude Include="Arm.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Gear.h" />
+    <ClInclude Include="Lever.h" />
+    <ClInclude Include="Motor.h" />
+    <ClInclude Include="Piston.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="RealMachine.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Rod.h" />
+    <ClInclude Include="Rotor.h" />
+    <ClInclude Include="Shape.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Machine.h" />
+    <ClInclude Include="MachineFactory.h" />
+    <ClInclude Include="MachineLib.h" />
+    <ClInclude Include="MachineDlg.h" />
+    <ClInclude Include="MachineStandin.h" />
+    <ClInclude Include="Sink.h" />
+    <ClInclude Include="Source.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MachineLib.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\machine.bmp" />
+    <Image Include="res\tree100.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MachineLib.rc2" />
+    <None Include="MachineLib.def" />
+  </ItemGroup>
+</Project>

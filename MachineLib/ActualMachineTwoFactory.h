@@ -15,6 +15,8 @@ class CActualMachineTwoFactory :
 	public CActualMachineFactory
 {
 public:
+	/** Copy constructor disabled */
+	CActualMachineTwoFactory(const CActualMachineTwoFactory &) = delete;
 	CActualMachineTwoFactory();
 	virtual ~CActualMachineTwoFactory();
 

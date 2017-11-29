@@ -7,23 +7,39 @@
 *
 */
 #pragma once
-#include "RotatingSource.h"
+#include "Sink.h"
+
+class CComponent;
 class CRotatingSource;
 
 /*
 * Class that represents a rotating sink.
 *
 */
-class CRotatingSink
+class CRotatingSink: public CSink
 {
 public:
+	/** Copy constructor disabled */
+	CRotatingSink(const CRotatingSink &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CRotatingSink &) = delete;
 	CRotatingSink();
-	~CRotatingSink();
+	virtual ~CRotatingSink();
 
 	void AddRotatingSource(CRotatingSource* rotate);
 
+	void MatchSourceRotation(double rotation);
+
+
 private:
 	///pointer to source that rotates this sink
-	CRotatingSource* mRotatingSource;
+	CRotatingSource* mRotatingSource=nullptr;
+
+	///speed of source for this sink
+	double mAngularSpeed;
+
+	///rotation of source for this sink
+	double mRotation;
+
 };
 

@@ -65,7 +65,7 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	gear1->SetLocation(150, -70 - 20 / 2);
 	machine->AddComponent(gear1);
 
-	////motor->GetSource()->AddSink(gear1->GetSink());
+	motor->GetSource()->AddRotatingSink(gear1->GetSink());
 
 	// A post that holds the larger gear
 	auto gear2post = make_shared<CShape>();
@@ -74,14 +74,14 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	gear2post->SetColor(Color::DarkGreen);
 	machine->AddComponent(gear2post);
 
-	//// The second gear
-	//// Radius=40pixels, 20 teeth
-	//auto gear2 = make_shared<CGear>(40, 20);
-	//gear2->SetImage(L"images/hammered-copper.png");
-	//gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
-	//machine->AddComponent(gear2);
+	// The second gear
+	// Radius=40pixels, 20 teeth
+	auto gear2 = make_shared<CGear>(40, 20);
+	gear2->SetImage(L"images/hammered-copper.png");
+	gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
+	machine->AddComponent(gear2);
 
-	//gear1->Drive(gear2, 0.1);
+	gear1->MeshGear(gear2,0.1);
 
 	//// The arm attached to the second gear
 	//// 50 pixels long

@@ -10,6 +10,7 @@
 /** Constructor */
 CMotor::CMotor()
 {
+	mSource.SetComponent(this);
 }
 
 /** Destructor */
@@ -33,9 +34,9 @@ double CMotor::GetRotation()
 void CMotor::SetTime(double time)
 {
 	mTime = time;
-	SetRotation(time);
+	SetRotation(time*mSpeed);
 
-	mRotatingSource->UpdateRotation(time);
+	mSource.UpdateRotation(time*mSpeed);
 }
 
 

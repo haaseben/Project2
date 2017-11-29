@@ -17,6 +17,10 @@ class CArm :
 	public CComponent
 {
 public:
+	/** Copy constructor disabled */
+	CArm(const CArm &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CArm &) = delete;
 	CArm(int length);
 	virtual ~CArm();
 
@@ -25,5 +29,7 @@ public:
 private:
 	///length of  the arm
 	double mLength;
+
+	CRotatingSink mSink;    ///< The rotation sink for this component
 };
 
