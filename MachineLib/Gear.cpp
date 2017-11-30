@@ -57,6 +57,7 @@ void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 
 void CGear::MeshGear(double speed, double offset)
 {
+	mPhase = offset;
 	mSpeed = speed;
 }
 

@@ -84,28 +84,31 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	machine->AddComponent(gear2);
 
 	gear1->GetSource()->AddRotatingSink(gear2->GetSink());
-	gear1->MeshGear(-.5, .1);
+	gear1->MeshGear(-.5,0.1);
 
-	// The arm attached to the second gear
-	// 50 pixels long
-	/*auto arm = make_shared<CArm>(50);
+	//// The arm attached to the second gear
+	//// 50 pixels long
+	auto arm = make_shared<CArm>(50);
+	arm->Rectangle(-4, 3, 50, 7);
 	arm->SetImage(L"images/arm1.png");
-	arm->SetLocation(gear2->GetX(),gear2->GetY());
-	machine->AddComponent(arm);*/
+	arm->SetLocation(gear2->GetX(),gear2->GetY()+1);
+	machine->AddComponent(arm);
 
-	//gear2->GetSource()->AddSink(arm->GetSink());
+	gear2->GetSource()->AddRotatingSink(arm->GetSink());
+	gear2->MeshGear(1, .1);
 
 	//// The column that holds the lever
-	//auto column = make_shared<CShape>();
-	//column->Rectangle(-20, -40, 40, 220);
-	//column->SetImage(L"images/column.png");
+	auto column = make_shared<CShape>();
+	column->Rectangle(-20, -40, 40, 220);
+	column->SetImage(L"images/column.png");
 
 	//// The lever
-	//auto lever = make_shared<CLever>(400);
-	//lever->SetPosition(0, -232);
-	//lever->SetImage(L"images/lever.png");
+	auto lever = make_shared<CLever>(400);
+	lever->Rectangle(-256, 30, 512, 60);
+	lever->SetLocation(0, -227);
+	lever->SetImage(L"images/lever.png");
 	//lever->SetDriveEnd(185);
-	//machine->AddPart(lever);
+	machine->AddComponent(lever);
 
 	//// The flag attached to the lever
 	//// Adding the points allows (0,0) be at the end
@@ -121,17 +124,18 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	//lever->GetRotationSource()->AddSink(flag->GetSink());
 
 	//// Column is added after the lever so it is in front
-	//machine->AddPart(column);
+	machine->AddComponent(column);
 
 	//// Rod from arm to lever
 	//// 150 pixels long, 7 pixels wide
-	//auto rod1 = make_shared<CRod>(150);
-	//BYTE gray = 50;
-	//rod1->SetColor(Color(gray, gray, gray));
-	//machine->AddPart(rod1);
+	auto rod1 = make_shared<CRod>(150);
+	BYTE gray = 50;
+	rod1->Rectangle(-10, 2, 7, 150);
+	rod1->SetColor(Color(gray, gray, gray));
+	machine->AddComponent(rod1);
 
-	//arm->GetRodSource()->AddPart(rod1);
-	//rod1->SetRodSink(lever->GetRodSink());
+	arm->GetRodEndSource()->AddRodEndSink(rod1->GetSink());
+	rod1->GetLeverEndSource()->AddLeverEndSink(lever->GetSink());
 
 	//// Rod from lever to Piston
 	//// 50 pixels long, 5 pixels wide

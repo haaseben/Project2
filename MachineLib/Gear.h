@@ -56,8 +56,8 @@ private:
 
 	///phase at where the gear is in rotation
 	double mPhase;
-	
-	///speed of connected gear to be updated to
+
+	///speed of connected sink to be updated to
 	double mSpeed;
 };
 

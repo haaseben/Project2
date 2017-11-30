@@ -1,5 +1,5 @@
 /**
-* \file Motor.h
+* \file Arm.h
 *
 * \author Ben Haase
 *
@@ -24,12 +24,22 @@ public:
 	CArm(int length);
 	virtual ~CArm();
 
+	CRotatingSink* GetSink() { return &mRotatingSink; }
+
+	CRodEndSource* GetRodEndSource() { return &mRodEndSource; }
+
 	void CArm::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
+
 
 private:
 	///length of  the arm
 	double mLength;
 
-	CRotatingSink mSink;    ///< The rotation sink for this component
+	///where the arm is currently in rotation
+	Gdiplus::Point mArmEndLocation;
+
+	CRotatingSink mRotatingSink;    ///< The rotation sink for this component
+
+	CRodEndSource mRodEndSource;  ///< The rod end source for this component
 };
 

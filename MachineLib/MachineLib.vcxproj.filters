@@ -24,6 +24,13 @@
     <ClCompile Include="MachineStandin.cpp" />
     <ClCompile Include="Sink.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="RotatingSink.cpp" />
+    <ClCompile Include="RotatingSource.cpp" />
+    <ClCompile Include="Negotiate.cpp" />
+    <ClCompile Include="RodEndSink.cpp" />
+    <ClCompile Include="RodEndSource.cpp" />
+    <ClCompile Include="LeverEndSource.cpp" />
+    <ClCompile Include="LeverEndSink.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActualMachine.h" />
@@ -51,6 +58,13 @@
     <ClInclude Include="MachineStandin.h" />
     <ClInclude Include="Sink.h" />
     <ClInclude Include="Source.h" />
+    <ClInclude Include="RotatingSink.h" />
+    <ClInclude Include="RotatingSource.h" />
+    <ClInclude Include="Negotiate.h" />
+    <ClInclude Include="RodEndSink.h" />
+    <ClInclude Include="RodEndSource.h" />
+    <ClInclude Include="LeverEndSource.h" />
+    <ClInclude Include="LeverEndSink.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MachineLib.rc" />
