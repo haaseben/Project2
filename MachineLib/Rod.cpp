@@ -8,6 +8,7 @@
 
 /**
 * Constructor
+* \param length Length of the rod
 */
 CRod::CRod(double length)
 {

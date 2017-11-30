@@ -24,6 +24,12 @@ public:
 	CShape();
 	virtual ~CShape();
 
+	/**
+	* Draw the component at the currently specified location
+	* \param graphics GDI+ Graphics object
+	* \ param x X location of part
+	* \param y Y location of part
+	*/
 	void DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 
 private:

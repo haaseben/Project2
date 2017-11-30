@@ -20,6 +20,8 @@ public:
 	CActualMachineTwoFactory();
 	virtual ~CActualMachineTwoFactory();
 
+	/** Create the machine
+	* \returns New machine object */
 	std::shared_ptr<CActualMachine> Create();
 };
 

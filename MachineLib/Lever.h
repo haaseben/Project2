@@ -25,10 +25,24 @@ public:
 	CLever(double length);
 	virtual ~CLever();
 
+	/**
+	* Draw the component at the currently specified location
+	* \param graphics GDI+ Graphics object
+	* \ param x X location of part
+	* \param y Y location of part
+	*/
 	void CLever::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 
+	/**
+	* Negotiates between a rod and lever
+	* \param rod Rod that will be used
+	*/
 	void CLever::Negotiate(CRod *rod);
 
+	/**
+	* Returns the sink that needs to be set for a source
+	* \return sink to be set
+	*/
 	CLeverEndSink* GetSink() { return &mLeverEndSink; }
 
 private:

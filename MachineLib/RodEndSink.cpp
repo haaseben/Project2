@@ -8,7 +8,9 @@
 #include "Negotiate.h"
 #include "RodEndSource.h"
 
-
+/**
+* Constructor
+*/
 CRodEndSink::CRodEndSink()
 {
 }

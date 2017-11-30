@@ -1,3 +1,8 @@
+/**
+* \file RotatingSink.cpp
+*
+* \author Ben Haase
+*/
 #include "stdafx.h"
 #include "RotatingSource.h"
 #include "RotatingSink.h"

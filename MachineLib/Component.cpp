@@ -26,11 +26,6 @@ void CComponent::SetMachine(CActualMachine *machine)
 	mActualMachine = machine;
 }
 
-//void CComponent::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
-//{
-//
-//}
-
 void CComponent::SetFrame(int frame)
 {
 

@@ -1,5 +1,5 @@
 /**
-* \file Motor.h
+* \file Rod.h
 *
 * \author Ben Haase
 *
@@ -24,10 +24,24 @@ public:
 	CRod(double length);
 	virtual~CRod();
 
+	/**
+	* Draw the component at the currently specified location
+	* \param graphics GDI+ Graphics object
+	* \ param x X location of part
+	* \param y Y location of part
+	*/
 	void CRod::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 
+	/**
+	* Returns the sink that needs to be set for a source
+	* \return sink to be set
+	*/
 	CRodEndSink* GetSink() { return &mRodEndSink; }
 
+	/**
+	* Returns the source that needs to be set for a sink to be set
+	* \param source to set
+	*/
 	CLeverEndSource* GetLeverEndSource() { return &mLeverEndSource; }
 
 
@@ -35,7 +49,7 @@ private:
 	///length of the rod
 	double mLength;
 
-	CRodEndSink mRodEndSink;
+	CRodEndSink mRodEndSink;   ///< The rod end sink for this component
 
 	CLeverEndSource mLeverEndSource;  ///< The rod end source for this component
 };

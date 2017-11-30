@@ -22,8 +22,16 @@ public:
 	CSink();
 	virtual ~CSink();
 
+	/**
+	* Returns the source that needs to be set for a sink to be set
+	* \param component Component to set
+	*/
 	void CSink::SetComponent(CComponent* component);
 
+	/**
+	* Returns the component that needs to be set for a source
+	* \return component to be set
+	*/
 	CComponent* GetComponent();
 
 private:

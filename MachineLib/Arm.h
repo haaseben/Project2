@@ -24,10 +24,24 @@ public:
 	CArm(int length);
 	virtual ~CArm();
 
+	/**
+	* Returns the sink that needs to be set for a source
+	* \return sink to be set
+	*/
 	CRotatingSink* GetSink() { return &mRotatingSink; }
 
+	/**
+	* Returns the source that needs to be set for a sink to be set
+	* \return source to set
+	*/
 	CRodEndSource* GetRodEndSource() { return &mRodEndSource; }
 
+	/**
+	* Draw the component at the currently specified location
+	* \param graphics GDI+ Graphics object
+	* \ param x X location of part
+	* \param y Y location of part
+	*/
 	void CArm::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 
 

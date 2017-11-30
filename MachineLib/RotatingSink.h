@@ -26,10 +26,24 @@ public:
 	CRotatingSink();
 	virtual ~CRotatingSink();
 
+	/**
+	* Adds relation between sink and source
+	* \param rotate Rotate to be added to sink
+	*/
 	void AddRotatingSource(CRotatingSource* rotate);
 
+
+	/**
+	* Matches source rotation
+	* \param rotation New rotation of connection
+	*/
 	void MatchSourceRotation(double rotation);
 
+
+	/**
+	* Matches source speed
+	* \param speed New speed of connection
+	*/
 	void CRotatingSink::MatchSourceSpeed(double speed);
 
 private:

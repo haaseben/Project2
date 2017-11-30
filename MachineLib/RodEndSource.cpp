@@ -7,7 +7,9 @@
 #include "RodEndSource.h"
 #include "RodEndSink.h"
 
-
+/**
+* Constructor
+*/
 CRodEndSource::CRodEndSource()
 {
 }

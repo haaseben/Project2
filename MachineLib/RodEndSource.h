@@ -26,8 +26,16 @@ public:
 	CRodEndSource();
 	virtual ~CRodEndSource();
 
+	/**
+	* updates location of connected sink
+	* \param location New location of connection
+	*/
 	void UpdateLocation(Gdiplus::Point location);
 
+	/**
+	* Adds relation between sink and source
+	* \param sink Sink to be added to source
+	*/
 	void AddRodEndSink(CRodEndSink* sink);
 
 private:

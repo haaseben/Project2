@@ -1,5 +1,5 @@
 /**
-* \file Motor.h
+* \file Piston.h
 *
 * \author Ben Haase
 *
@@ -25,8 +25,18 @@ public:
 	CPiston();
 	virtual ~CPiston();
 
+	/**
+	* Negotiates between a rod and piston
+	* \param rod Rod that will be used
+	*/
 	void CPiston::Negotiate(CRod *rod);
 
+	/**
+	* Draw the component at the currently specified location
+	* \param graphics GDI+ Graphics object
+	* \ param x X location of part
+	* \param y Y location of part
+	*/
 	void CPiston::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
 };
 
