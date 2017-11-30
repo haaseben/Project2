@@ -46,7 +46,6 @@ public:
 
 	int GetY() { return mLocation.Y; }
 
-	
 
 private:
 	///pointer to actual machine
@@ -60,6 +59,11 @@ private:
 
 	///rotation of component
 	double mRotation;
+
+	///speed of a component
+	double mSpeed;
+
+
 
 };
 

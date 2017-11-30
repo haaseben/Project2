@@ -52,19 +52,12 @@ CGear::~CGear()
 void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
 	DrawPolygon(graphics, x+GetX(), y+GetY());
+	mRotatingSource.UpdateRotation(GetRotation()*mSpeed);
 }
 
-void CGear::MeshGear(std::shared_ptr<CGear> gear, double offset)
+void CGear::MeshGear(double speed, double offset)
 {
-	mPhase = offset;
-
-	GetSource()->AddRotatingSink(gear->GetSink());
-
-	mRotation = -gear->GetRotation() * GetNumTeeth() / gear->GetNumTeeth() + mPhase;
-
-	mRotatingSource.UpdateRotation(mRotation);
-
-	gear->SetRotation(mRotation);
+	mSpeed = speed;
 }
 
 void CGear::SetRotation(double rotation)
@@ -73,7 +66,7 @@ void CGear::SetRotation(double rotation)
 	mRotatingSource.UpdateRotation(rotation);
 }
 
-void ExamineSink(CRotatingSink rotating)
+void CGear::ExamineSink(CRotatingSink rotating)
 {
 
 }

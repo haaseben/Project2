@@ -61,6 +61,7 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	// The gear driven by the motor
 	// Radius=20pixels, 10 teeth
 	auto gear1 = make_shared<CGear>(20, 10);
+	//gear1->SetSpeed(1.0);
 	gear1->SetImage(L"images/iron.png");
 	gear1->SetLocation(150, -70 - 20 / 2);
 	machine->AddComponent(gear1);
@@ -77,18 +78,20 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	// The second gear
 	// Radius=40pixels, 20 teeth
 	auto gear2 = make_shared<CGear>(40, 20);
+	//gear2->SetSpeed(-1.0);
 	gear2->SetImage(L"images/hammered-copper.png");
 	gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
 	machine->AddComponent(gear2);
 
-	gear1->MeshGear(gear2,0.1);
+	gear1->GetSource()->AddRotatingSink(gear2->GetSink());
+	gear1->MeshGear(-.5, .1);
 
-	//// The arm attached to the second gear
-	//// 50 pixels long
-	//auto arm = make_shared<CArm>(50);
-	//arm->SetImage(L"images/arm1.png");
-	//arm->SetLocation(gear2->GetX(),gear2->GetY());
-	//machine->AddComponent(arm);
+	// The arm attached to the second gear
+	// 50 pixels long
+	/*auto arm = make_shared<CArm>(50);
+	arm->SetImage(L"images/arm1.png");
+	arm->SetLocation(gear2->GetX(),gear2->GetY());
+	machine->AddComponent(arm);*/
 
 	//gear2->GetSource()->AddSink(arm->GetSink());
 
