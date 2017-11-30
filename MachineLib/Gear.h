@@ -24,7 +24,7 @@ public:
 	CGear(int radius,int teeth);
 	virtual ~CGear();
 
-	void CGear::MeshGear(std::shared_ptr<CGear> gear, double offset);
+	void CGear::MeshGear(double speed, double offset);
 
 	void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y) ;
 
@@ -57,6 +57,7 @@ private:
 	///phase at where the gear is in rotation
 	double mPhase;
 
-	double mFirstCall=0;
+	///speed of connected sink to be updated to
+	double mSpeed;
 };
 

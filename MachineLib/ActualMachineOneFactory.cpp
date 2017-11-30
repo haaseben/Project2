@@ -81,7 +81,8 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	gear2->SetLocation(gear1->GetX() + 55, gear1->GetY());
 	machine->AddComponent(gear2);
 
-	gear1->MeshGear(gear2,0.1);
+	gear1->GetSource()->AddRotatingSink(gear2->GetSink());
+	gear1->MeshGear(-.5,0.1);
 
 	//// The arm attached to the second gear
 	//// 50 pixels long
@@ -92,6 +93,7 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	machine->AddComponent(arm);
 
 	gear2->GetSource()->AddRotatingSink(arm->GetSink());
+	gear2->MeshGear(1, .1);
 
 	//// The column that holds the lever
 	auto column = make_shared<CShape>();
