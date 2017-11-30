@@ -53,13 +53,13 @@ void CRealMachine::SetFrameRate(double rate)
 void CRealMachine::SetMachineNumber(int seed)
 {
 	mMachineNum=seed;
-	if (seed = 1)
+	if (seed == 1)
 	{
 		ActualMachineOneFactory machineone;
 		mActualMachine = machineone.Create();
 	}
 
-	else if (seed = 2)
+	else if (seed == 2)
 	{
 		CActualMachineTwoFactory machinetwo;
 		mActualMachine = machinetwo.Create();

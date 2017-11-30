@@ -49,6 +49,7 @@ private:
 	///pointer to negotate for determining the position
 	CNegotiate* mNegotiator = nullptr;
 
+	///pointer to source of this sink
 	CRodEndSource* mRodEndSource = nullptr;
 };
 
