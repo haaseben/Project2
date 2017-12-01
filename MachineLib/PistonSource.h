@@ -11,7 +11,7 @@
 
 class CPistonSink;
 
-/*
+/**
 * Class that represents a piston source.
 */
 class CPistonSource :
@@ -39,6 +39,6 @@ public:
 	void AddPistonSink(CPistonSink* sink);
 
 private:
-	///pointer to sink this rotates
-	CPistonSink* mPistonSink = nullptr;
+	
+	CPistonSink* mPistonSink = nullptr;  ///< The rotation sink for this component
 };

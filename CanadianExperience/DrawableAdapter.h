@@ -8,6 +8,7 @@
 */
 #pragma once
 #include "Drawable.h"
+#include <memory>
 
 class CMachine;
 
@@ -18,8 +19,15 @@ class CDrawableAdapter :
 	public CDrawable
 {
 public:
+	/** Default constructor disabled */
+	CDrawableAdapter() = delete;
+	/** Copy constructor disabled */
+	CDrawableAdapter(const CDrawableAdapter &) = delete;
+	/** Assignment operator disabled */
+	void operator=(const CDrawableAdapter &) = delete;
+
 	CDrawableAdapter(const std::wstring &name);
-	~CDrawableAdapter();
+	virtual ~CDrawableAdapter();
 
 	/** Draw the drawable
 	* \param graphics Graphics object to draw on */
@@ -30,10 +38,14 @@ public:
 	* \returns true if clicked on */
 	virtual bool HitTest(Gdiplus::Point pos);
 
+	/** Sets which machine will draw
+	* \param num Number to set machine to */
 	void SetMachine(int num);
+
+
 
 private:
 	///machine to be drawn
-	CMachine* mMachine;
+	std::shared_ptr<CMachine> mMachine;
 };
 

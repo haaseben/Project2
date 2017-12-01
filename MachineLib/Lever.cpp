@@ -8,11 +8,14 @@
 
 /**
 * Constructor
+* \param length Length of lever
 */
 CLever::CLever(double length)
 {
 	mLength = length;
 	mLeverEndSink.SetComponent(this);
+	mLeverEndSource.SetComponent(this);
+	mRotationSource.SetComponent(this);
 }
 
 /** Destructor */

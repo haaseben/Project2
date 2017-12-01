@@ -37,7 +37,7 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 
 	// The base
 	auto base = make_shared<CShape>();
-	int wid = 550;
+	int wid = 750;
 	base->Rectangle(-wid / 2, 0, wid, 40);
 	base->SetImage(L"images/base.png");
 	machine->AddComponent(base);
@@ -113,14 +113,14 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 	//// The flag attached to the lever
 	//// Adding the points allows (0,0) be at the end
 	//// of the flagpole, so it rotates around that point.
-	//auto flag = make_shared<CShape>();
-	//flag->AddPoint(-50, 0);
-	//flag->AddPoint(-50, -100);
-	//flag->AddPoint(5, -100);
-	//flag->AddPoint(5, 0);
-	//flag->SetImage(L"images/flag.png");
-	//flag->SetPosition(lever->GetPosition());
-	//machine->AddPart(flag);
+	/*auto flag = make_shared<CShape>();
+	flag->AddPoint(-50, 0);
+	flag->AddPoint(-50, -100);
+	flag->AddPoint(5, -100);
+	flag->AddPoint(5, 0);
+	flag->SetImage(L"images/flag.png");
+	flag->SetLocation(0,-227);
+	machine->AddComponent(flag);*/
 	//lever->GetRotationSource()->AddSink(flag->GetSink());
 
 	//// Column is added after the lever so it is in front
@@ -139,35 +139,35 @@ std::shared_ptr<CActualMachine> ActualMachineOneFactory::Create()
 
 	//// Rod from lever to Piston
 	//// 50 pixels long, 5 pixels wide
-	//auto rod2 = make_shared<CRod>(50, 5);
-	//rod2->SetColor(Color(gray, gray, gray));
+	auto rod2 = make_shared<CRod>(50);
+	rod2->Rectangle(-243, -180, 7, 50);
+	rod2->SetColor(Color(gray, gray, gray));
 
-	//lever->GetPositionSource()->AddPart(rod2);
+	lever->GetSource()->AddLeverEndSink(rod2->GetLeverEndSink());
 
 	//// Piston
 	//// The points are added so that (0,0) is 
 	//// the attachment point for the rod.
-	//auto piston = make_shared<CShape>();
-	//double pistonH = 90;
-	//double pistonW = 0.386 * pistonH;
-	//double pistonC = 13.0 / 215.0 * pistonH;
-	//piston->AddPoint(-pistonW / 2, -pistonC);
-	//piston->AddPoint(pistonW / 2, -pistonC);
-	//piston->AddPoint(pistonW / 2, -pistonC + pistonH);
-	//piston->AddPoint(-pistonW / 2, -pistonC + pistonH);
-	//piston->SetImage(L"images/piston.png");
-	//piston->SetPosition(-175, -150);
-	//machine->AddPart(piston);
-	//rod2->SetRodSink(piston->GetRodSink());
-
-	//machine->AddPart(rod2);
+	auto piston = make_shared<CPiston>();
+	double pistonH = 90;
+	double pistonW = 0.386 * pistonH;
+	double pistonC = 13.0 / 215.0 * pistonH;
+	piston->AddPoint(-pistonW / 2, -pistonC);
+	piston->AddPoint(pistonW / 2, -pistonC);
+	piston->AddPoint(pistonW / 2, -pistonC + pistonH);
+	piston->AddPoint(-pistonW / 2, -pistonC + pistonH);
+	piston->SetImage(L"images/piston.png");
+	piston->SetLocation(-240, -182);
+	machine->AddComponent(piston);
+	rod2->GetPistonSource()->AddPistonSink(piston->GetSink());
+	machine->AddComponent(rod2);
 
 	//// Cylinder
-	//auto cylinder = make_shared<CShape>();
-	//cylinder->Rectangle(-30, 0, 60, 120);
-	//cylinder->SetPosition(-175, -38);
-	//cylinder->SetImage(L"images/cylinder.png");
-	//machine->AddPart(cylinder);
+	auto cylinder = make_shared<CShape>();
+	cylinder->Rectangle(-60, 0, 60, 70);
+	cylinder->SetLocation(-210, -38);
+	cylinder->SetImage(L"images/cylinder.png");
+	machine->AddComponent(cylinder);
 
 	return machine;
 }

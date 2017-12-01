@@ -12,7 +12,7 @@
 class CLeverEndSink;
 class CNegotiate;
 
-/*
+/**
 * Class that represents a lever end source.
 */
 class CLeverEndSource :
@@ -41,7 +41,7 @@ public:
 	void AddLeverEndSink(CLeverEndSink* sink);
 
 private:
-	///pointer to sink this rotates
-	CLeverEndSink* mLeverEndSink = nullptr;
+
+	CLeverEndSink* mLeverEndSink = nullptr; ///< The rotation sink for this component
 };
 

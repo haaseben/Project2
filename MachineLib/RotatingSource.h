@@ -10,7 +10,7 @@
 #include "Source.h"
 class CRotatingSink;
 
-/*
+/**
 * Class that represents a rotating source.
 *
 */

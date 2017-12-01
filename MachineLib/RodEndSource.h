@@ -11,7 +11,7 @@
 
 class CRodEndSink;
 
-/*
+/**
 * Class that represents a rod end source.
 */
 class CRodEndSource :
@@ -39,7 +39,7 @@ public:
 	void AddRodEndSink(CRodEndSink* sink);
 
 private:
-	///pointer to sink this rotates
-	CRodEndSink* mRodEndSink = nullptr;
+
+	CRodEndSink* mRodEndSink = nullptr; ///< The rotation sink for this component
 };
 

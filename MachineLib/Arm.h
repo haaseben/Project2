@@ -39,7 +39,7 @@ public:
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	void CArm::DrawPart(Gdiplus::Graphics *graphics, int x, int y);

@@ -26,14 +26,14 @@ public:
 	/**
 	* Sets speed of component connected to gear
 	* \param speed Speed to set component to 
-	* \ param offset Offset to mesh the gears
+	* \param offset Offset to mesh the gears
 	*/
 	void CGear::MeshGear(double speed, double offset);
 
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	void CGear::DrawPart(Gdiplus::Graphics *graphics, int x, int y) ;

@@ -15,6 +15,8 @@ CRod::CRod(double length)
 	mLength = length;
 	mRodEndSink.SetComponent(this);
 	mLeverEndSource.SetComponent(this);
+	mPistonSource.SetComponent(this);
+	mLeverEndSink.SetComponent(this);
 }
 
 /** Destructor */

@@ -6,12 +6,26 @@
 #include "stdafx.h"
 #include "DrawableAdapter.h"
 #include "Machine.h"
+#include "MachineFactory.h"
+#include "MachineDlg.h"
+
 /**
 * Constructor
+* \param name The drawable name
 */
 CDrawableAdapter::CDrawableAdapter(const std::wstring &name) : CDrawable(name)
 {
+	int nameInt = stoi(name);
+	CMachineFactory factory;
+	mMachine = factory.CreateMachine();
+	mMachine->SetMachineNumber(nameInt);
+	mMachine->SetFrameRate(30);
+	mMachine->SetSpeed(1);
+	mMachine->SetMachineFrame(300);
+
+
 }
+	
 
 /**
 * Destructor
@@ -23,7 +37,7 @@ CDrawableAdapter::~CDrawableAdapter()
 
 void CDrawableAdapter::SetMachine(int num)
 {
-	mMachine->SetMachineNumber(num);
+	//mMachine->SetMachineNumber(num);
 }
 
 /**
@@ -32,7 +46,14 @@ void CDrawableAdapter::SetMachine(int num)
 */
 void CDrawableAdapter::Draw(Gdiplus::Graphics *graphics)
 {
+	float scale = 0.3f;
+
+	auto save = graphics->Save();
+	graphics->TranslateTransform((float)mPlacedPosition.X,
+		(float)mPlacedPosition.Y);
+	graphics->ScaleTransform(scale, scale);
 	mMachine->DrawMachine(graphics);
+	graphics->Restore(save);
 }
 
 /**
@@ -43,40 +64,4 @@ void CDrawableAdapter::Draw(Gdiplus::Graphics *graphics)
 bool CDrawableAdapter::HitTest(Gdiplus::Point pos)
 {
 	return false;
-	//Matrix mat;
-	//mat.Translate((float)mCenter.X, (float)mCenter.Y);
-	//mat.Rotate((float)(mPlacedR * RtoD));
-	//mat.Translate((float)-mPlacedPosition.X, (float)-mPlacedPosition.Y);
-
-	//Point points[] = { pos };
-	//mat.TransformPoints(points, 1);
-
-	//double wid = mImage->GetWidth();
-	//double hit = mImage->GetHeight();
-
-	//double testX = points[0].X;
-	//double testY = points[0].Y;
-
-	//// Test to see if x, y are in the image
-	//if (testX < 0 || testY < 0 || testX >= wid || testY >= hit)
-	//{
-	//	// We are outside the image
-	//	return false;
-	//}
-
-	//// Test to see if x, y are in the drawn part of the image
-	//auto format = mImage->GetPixelFormat();
-	//if (format == PixelFormat32bppARGB || format == PixelFormat32bppPARGB)
-	//{
-	//	// This image has an alpha map, which implements the 
-	//	// transparency. If so, we should check to see if we
-	//	// clicked on a pixel where alpha is not zero, meaning
-	//	// the pixel shows on the screen.
-	//	Color color;
-	//	mImage->GetPixel((int)testX, (int)testY, &color);
-	//	return color.GetAlpha() != 0;
-	//}
-	//else {
-	//	return true;
-	//}
 }

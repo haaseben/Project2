@@ -9,6 +9,7 @@
 #include "HaroldFactory.h"
 #include "SpartyFactory.h"
 #include "ImageDrawable.h"
+#include "DrawableAdapter.h"
 
 using namespace std;
 using namespace Gdiplus;
@@ -54,6 +55,24 @@ std::shared_ptr<CPicture> CPictureFactory::Create()
 
     sparty->SetPosition(Point(200, 500));
     picture->AddActor(sparty);
+
+	//Create Machine1
+	auto machine1 = make_shared<CActor>(L"Machine");
+	machine1->SetClickable(false);
+	machine1->SetPosition(Point(450, 300));
+	auto machine = make_shared<CDrawableAdapter>(L"1");
+	machine1->AddDrawable(machine);
+	machine1->SetRoot(machine);
+	picture->AddActor(machine1);
+
+	//Create Machine2
+	auto machine2 = make_shared<CActor>(L"Machine");
+	machine2->SetClickable(false);
+	machine2->SetPosition(Point(500, 450));
+	machine = make_shared<CDrawableAdapter>(L"2");
+	machine2->AddDrawable(machine);
+	machine2->SetRoot(machine);
+	picture->AddActor(machine2);
 
     return picture;
 }

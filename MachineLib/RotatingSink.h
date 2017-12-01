@@ -12,7 +12,7 @@
 class CComponent;
 class CRotatingSource;
 
-/*
+/**
 * Class that represents a rotating sink.
 *
 */

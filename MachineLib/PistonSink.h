@@ -11,7 +11,7 @@
 #include "Component.h"
 
 class CPistonSource;
-/*
+/**
 * Class that represents a rod end sink.
 *
 */
@@ -40,7 +40,7 @@ public:
 	void MatchSourceLocation(Gdiplus::Point location);
 
 private:
-	///pointer to source of this sink
-	CPistonSource* mPistonSource = nullptr;
-};
+	
+	CPistonSource* mPistonSource = nullptr;  ///< The rotation sink for this component
+}; 
 

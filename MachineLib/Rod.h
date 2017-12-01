@@ -27,7 +27,7 @@ public:
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	void CRod::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
@@ -40,9 +40,22 @@ public:
 
 	/**
 	* Returns the source that needs to be set for a sink to be set
-	* \param source to set
+	* \return sink to be set
 	*/
 	CLeverEndSource* GetLeverEndSource() { return &mLeverEndSource; }
+
+	/**
+	* Returns the source that needs to be set for a sink to be set
+	* \return sink to be set
+	*/
+	CPistonSource* GetPistonSource() { return &mPistonSource; }
+
+
+	/**
+	* Returns the source that needs to be set for a sink to be set
+	* \return sink to be set
+	*/
+	CLeverEndSink* GetLeverEndSink() { return &mLeverEndSink; }
 
 
 private:
@@ -52,5 +65,9 @@ private:
 	CRodEndSink mRodEndSink;   ///< The rod end sink for this component
 
 	CLeverEndSource mLeverEndSource;  ///< The rod end source for this component
+
+	CPistonSource mPistonSource;  ///< The rod end source for this component
+
+	CLeverEndSink mLeverEndSink;  ///< The rod end source for this component
 };
 

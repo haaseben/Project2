@@ -29,7 +29,7 @@ public:
 	/**
 	* Computers the revolution 
 	* \param framerate FrameRate
-	* \ param framenum Number of frames
+	* \param framenum Number of frames
 	*/
 	void ComputeRevs(int framerate, int framenum);
 
@@ -54,7 +54,7 @@ public:
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	void CMotor::DrawPart(Gdiplus::Graphics *graphics, int x, int y) ;

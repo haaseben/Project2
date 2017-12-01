@@ -9,7 +9,7 @@
 #pragma once
 class CComponent;
 
-/*
+/**
 * Class that represents a sink for a machine.
 */
 class CSink

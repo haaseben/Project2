@@ -14,6 +14,8 @@
 #include "RodEndSource.h"
 #include "LeverEndSink.h"
 #include "LeverEndSource.h"
+#include "PistonSink.h"
+#include "PistonSource.h"
 class CSink;
 class CSource;
 class CActualMachine;
@@ -47,7 +49,7 @@ public:
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	virtual void DrawPart(Gdiplus::Graphics *graphics, int x, int y)=0;

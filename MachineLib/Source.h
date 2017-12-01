@@ -8,7 +8,7 @@
 */
 #pragma once
 class CComponent;
-/*
+/**
 * Class that represents a source for a machine.
 *
 */

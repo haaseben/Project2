@@ -29,9 +29,12 @@ public:
 	CActualMachine(int machinenum);
 	virtual ~CActualMachine();
 
+
 	/**
-	* Draw the machine at the currently specified location
+	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
+	* \param x X location of part
+	* \param y Y location of part
 	*/
 	virtual void DrawActualMachine(Gdiplus::Graphics *graphics,int x, int y);
 

@@ -34,9 +34,20 @@ public:
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	void CPiston::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
+
+	/**
+	* Returns the sink that needs to be set for a source
+	* \return sink to be set
+	*/
+	CPistonSink* GetSink() { return &mPistonSink; }
+
+private:
+
+	///sink relation for pistons movement
+	CPistonSink mPistonSink;
 };
 

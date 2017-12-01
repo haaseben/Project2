@@ -13,7 +13,7 @@ class CLeverEndSource;
 class CNegotiate;
 
 
-/*
+/**
 * Class that represents a lever end sink.
 */
 class CLeverEndSink :
@@ -30,7 +30,7 @@ public:
 
 	/**
 	* Sets negotiater to sink relation
-	* \param negotiater relation to perform negotiate
+	* \param negotiator relation to perform negotiate
 	*/
 	void CLeverEndSink::SetNegotiator(CNegotiate *negotiator);
 
@@ -47,9 +47,9 @@ public:
 	void MatchSourceLocation(Gdiplus::Point location);
 
 private:
-	///pointer to negotate for determining the position
-	CNegotiate* mNegotiator = nullptr;
+	
+	CNegotiate* mNegotiator = nullptr; ///< The rotation sink for this component
 
-	CLeverEndSource* mLeverEndSource = nullptr;
+	CLeverEndSource* mLeverEndSource = nullptr; ///< The rotation sink for this component
 };
 

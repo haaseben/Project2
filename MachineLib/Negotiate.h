@@ -10,7 +10,7 @@
 #include "Component.h"
 
 class CRod;
-/*
+/**
 * Class that negotiates for rods and its sinks.
 *
 */
@@ -26,6 +26,11 @@ public:
 	CNegotiate();
 	virtual ~CNegotiate();
 
+
+	/**
+	* Negotiates between a rod and lever
+	* \param rod Rod that will be used
+	*/
 	virtual void Negotiate(CRod *rod) = 0;
 
 };

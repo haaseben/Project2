@@ -11,6 +11,7 @@
 */
 CPiston::CPiston()
 {
+	mPistonSink.SetComponent(this);
 }
 
 /** Destructor */
@@ -20,7 +21,7 @@ CPiston::~CPiston()
 
 void CPiston::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
-	DrawPolygon(graphics, x, y);
+	DrawPolygon(graphics, x+GetX(), y+GetY());
 }
 
 void CPiston::Negotiate(CRod *rod)

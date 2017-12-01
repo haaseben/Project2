@@ -28,7 +28,7 @@ public:
 	/**
 	* Draw the component at the currently specified location
 	* \param graphics GDI+ Graphics object
-	* \ param x X location of part
+	* \param x X location of part
 	* \param y Y location of part
 	*/
 	void CLever::DrawPart(Gdiplus::Graphics *graphics, int x, int y);
@@ -45,6 +45,18 @@ public:
 	*/
 	CLeverEndSink* GetSink() { return &mLeverEndSink; }
 
+	/**
+	* Returns the sink that needs to be set for a source
+	* \return sink to be set
+	*/
+	CLeverEndSource* GetSource() { return &mLeverEndSource; }
+
+	/**
+	* Returns the sink that needs to be set for a source
+	* \return sink to be set
+	*/
+	CRotatingSource* GetRotationSource() { return &mRotationSource; }
+
 private:
 
 	///length of lever
@@ -52,5 +64,11 @@ private:
 
 	///representation of this lever being a sink for a rod 
 	CLeverEndSink mLeverEndSink;
+
+	///representation of this lever being a sink for a rod 
+	CLeverEndSource mLeverEndSource;
+
+	///representation of this lever being a sink for a rod 
+	CRotatingSource mRotationSource;
 };
 
