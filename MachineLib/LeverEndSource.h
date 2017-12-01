@@ -11,6 +11,7 @@
 
 class CLeverEndSink;
 class CNegotiate;
+class CRod;
 
 /**
 * Class that represents a lever end source.
@@ -31,7 +32,7 @@ public:
 	* updates location of connected sink
 	* \param location New location of connection
 	*/
-	void UpdateLocation(Gdiplus::Point location);
+	void UpdateLocation(CRod* rod);
 
 
 	/**

@@ -33,5 +33,6 @@ void CRodEndSink::AddRodEndSource(CRodEndSource* source)
 
 void CRodEndSink::MatchSourceLocation(Gdiplus::Point location)
 {
+	mLocation = location;
 	GetComponent()->SetLocation(location.X,location.Y);
 }

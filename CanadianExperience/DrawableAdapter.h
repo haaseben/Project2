@@ -9,17 +9,18 @@
 #pragma once
 #include "Drawable.h"
 #include "PictureObserver.h"
+#include "Timeline.h"
 #include <memory>
 
-
+class CViewTimeline;
 class CMachine;
 class CMainframe;
 
-/** Implements the top of a characters head,
+/** Implements the machine ,
 * which has special functionality.
 */
 class CDrawableAdapter :
-	public CDrawable  //blic CPictureObserver
+	public CDrawable  , public CTimeline
 {
 public:
 	/** Default constructor disabled */
@@ -57,7 +58,10 @@ public:
 	*/
 	void SetSize(int x, int y) { mSize = Gdiplus::Point(x, y); }
 
-	
+	void CDrawableAdapter::Load(std::shared_ptr<xmlnode::CXmlNode> node)override;
+
+	void CDrawableAdapter::Save(std::shared_ptr<xmlnode::CXmlNode> root)override;
+
 
 private:
 	///machine to be drawn
@@ -69,5 +73,7 @@ private:
 	///size of the machine image
 	Gdiplus::Point mSize = Gdiplus::Point(0, 0);
 
+	///number of machine
+	int mMachineNum;
 };
 

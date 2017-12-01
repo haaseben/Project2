@@ -26,12 +26,7 @@ CRod::~CRod()
 
 void CRod::DrawPart(Gdiplus::Graphics *graphics, int x, int y)
 {
+	mLeverEndSource.UpdateLocation(this);
+
 	DrawPolygon(graphics, x+GetX(), y+GetY());
-
-	double PI2 = 3.14 * 2;
-
-	double xPoint = GetX() + (mLength)*cos(GetRotation()*PI2);
-	double yPoint = GetY() + (mLength)*sin(GetRotation()*PI2);
-
-	//mLeverEndSource.UpdateLocation(Gdiplus::Point(xPoint, yPoint));
 }

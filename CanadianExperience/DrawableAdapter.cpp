@@ -9,6 +9,8 @@
 #include "MachineFactory.h"
 #include "MachineDlg.h"
 #include "MainFrm.h"
+#include "ViewEdit.h"
+#include "ViewTimeline.h"
 
 
 using namespace std;
@@ -23,13 +25,13 @@ const double RtoD = 57.295779513;
 */
 CDrawableAdapter::CDrawableAdapter(const std::wstring &name) : CDrawable(name)
 {
-	int nameInt = stoi(name);
+	int mMachineNum = stoi(name);
 	CMachineFactory factory;
 	mMachine = factory.CreateMachine();
-	mMachine->SetMachineNumber(nameInt);
+	mMachine->SetMachineNumber(mMachineNum);
 	mMachine->SetFrameRate(30);
 	mMachine->SetSpeed(1);
-	mMachine->SetMachineFrame(300);
+	//mMachine->SetMachineFrame(300);
 
 	CMachineDlg dlg(mMachine);
 	if (dlg.DoModal() == IDOK)
@@ -51,12 +53,7 @@ CDrawableAdapter::~CDrawableAdapter()
 
 void CDrawableAdapter::SetMachine(int num)
 {
-	CMachineDlg dlg(mMachine);
-	if (dlg.DoModal() == IDOK)
-	{
-		// A machine has been selected
-
-	}
+	mMachine->SetMachineFrame(GetCurrentFrame());
 }
 
 /**
@@ -65,6 +62,7 @@ void CDrawableAdapter::SetMachine(int num)
 */
 void CDrawableAdapter::Draw(Gdiplus::Graphics *graphics)
 {
+	mMachine->SetMachineFrame(GetCurrentFrame());
 	float scale = 0.3f;
 
 	auto save = graphics->Save();
@@ -107,4 +105,27 @@ bool CDrawableAdapter::HitTest(Gdiplus::Point pos)
 	}
 
 	
+}
+
+
+/**
+* Load a timeline animation from a file
+* \param root XML node to load from
+*/
+void CDrawableAdapter::Load(std::shared_ptr<xmlnode::CXmlNode> node)
+{
+	CTimeline::Load(node);
+
+	mMachineNum = node->GetAttributeIntValue(L"machineNum", 1);
+}
+
+/**
+* Save the timeline animation to a file
+* \param root The XML node to save to
+*/
+void CDrawableAdapter::Save(std::shared_ptr<xmlnode::CXmlNode> root)
+{
+	CTimeline::Save(root);
+
+	root->SetAttribute(L"machineNum",mMachineNum );
 }

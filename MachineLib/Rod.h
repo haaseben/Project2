@@ -57,6 +57,12 @@ public:
 	*/
 	CLeverEndSink* GetLeverEndSink() { return &mLeverEndSink; }
 
+	/**
+	* Returns length of rod
+	* \return length of rod
+	*/
+	double GetLength() { return mLength; }
+
 
 private:
 	///length of the rod

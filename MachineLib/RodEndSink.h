@@ -45,11 +45,20 @@ public:
 	*/
 	void MatchSourceLocation(Gdiplus::Point location);
 
+	/**
+	* returns sink location
+	* \returns mLocation location of sink
+	*/
+	Gdiplus::Point GetLocation() { return mLocation; }
+
 private:
 	
 	CNegotiate* mNegotiator = nullptr;  ///< The rotation sink for this component
 
 	
 	CRodEndSource* mRodEndSource = nullptr;///< The rotation sink for this component
+
+	///current location of sink
+	Gdiplus::Point mLocation;
 };
 

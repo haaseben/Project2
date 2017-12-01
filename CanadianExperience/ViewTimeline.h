@@ -11,6 +11,7 @@
 #include "PictureObserver.h"
 
 class CMainFrame;
+class CDrawableAdapter;
 
 /** View window for the animation timeline */
 class CViewTimeline : public CScrollView, public CPictureObserver
@@ -55,6 +56,7 @@ private:
 
 	long long mLastTime;    ///< Last time we read the timer
 	double mTimeFreq;       ///< Rate the timer updates
+
 
 public:
     afx_msg void OnMouseMove(UINT nFlags, CPoint point);

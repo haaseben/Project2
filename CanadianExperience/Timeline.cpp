@@ -48,7 +48,7 @@ void CTimeline::SetCurrentTime(double t)
 {
     // Set the time
     mCurrentTime = t;
-
+	
     for (auto channel : mChannels)
     {
         channel->SetFrame(GetCurrentFrame());

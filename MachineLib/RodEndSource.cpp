@@ -21,6 +21,8 @@ CRodEndSource::~CRodEndSource()
 
 void CRodEndSource::UpdateLocation(Gdiplus::Point location)
 {
+	
+
 	if (mRodEndSink != nullptr)
 	{
 		mRodEndSink->MatchSourceLocation(location);

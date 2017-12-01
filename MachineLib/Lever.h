@@ -10,6 +10,8 @@
 #include "Component.h"
 #include "Negotiate.h"
 
+class CRod;
+
 /**
 * Class that represents a lever for a machine.
 *
@@ -70,5 +72,8 @@ private:
 
 	///representation of this lever being a sink for a rod 
 	CRotatingSource mRotationSource;
+
+	///negotiator for a lever
+	CNegotiate* mNegotiator;
 };
 

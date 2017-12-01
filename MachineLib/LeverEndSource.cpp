@@ -7,6 +7,7 @@
 #include "LeverEndSource.h"
 #include "LeverEndSink.h"
 #include "Negotiate.h"
+#include "Rod.h"
 
 /**
 * Constructor
@@ -20,11 +21,11 @@ CLeverEndSource::~CLeverEndSource()
 {
 }
 
-void CLeverEndSource::UpdateLocation(Gdiplus::Point location)
+void CLeverEndSource::UpdateLocation(CRod* rod)
 {
 	if (mLeverEndSink != nullptr)
 	{
-		mLeverEndSink->MatchSourceLocation(location);
+		mLeverEndSink->Negotiate(rod);
 	}
 }
 

@@ -14,6 +14,7 @@
 #include "Timeline.h"
 #include "Picture.h"
 #include "Actor.h"
+#include"DrawableAdapter.h"
 
 #include <sstream>
 
@@ -216,7 +217,7 @@ void CViewTimeline::OnMouseMove(UINT nFlags, CPoint point)
         {
             time = timeline->GetDuration();
         }
-
+		
         GetPicture()->SetAnimationTime(time);
         UpdateWindow();
     }

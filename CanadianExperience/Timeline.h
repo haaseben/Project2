@@ -70,8 +70,8 @@ public:
     void AddChannel(CAnimChannel *channel);
     void ClearKeyframe();
 
-    void Save(std::shared_ptr<xmlnode::CXmlNode> root);
-    void Load(std::shared_ptr<xmlnode::CXmlNode> root);
+    virtual void Save(std::shared_ptr<xmlnode::CXmlNode> root);
+    virtual void Load(std::shared_ptr<xmlnode::CXmlNode> root);
 
     void Clear();
 
