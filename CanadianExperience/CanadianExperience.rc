@@ -135,10 +135,6 @@ BEGIN
         MENUITEM "Play From Beginning",         ID_PLAY_PLAYFROMBEGINNING
         MENUITEM "Stop",                        ID_PLAY_STOP
     END
-    POPUP "&Machines"
-    BEGIN
-        MENUITEM "&SwitchMachine...",           ID_MACHINES_STARTMACHINE
-    END
 END
 
 

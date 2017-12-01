@@ -35,6 +35,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWndEx)
     ON_COMMAND(ID_EDIT_ROTATE, &CMainFrame::OnEditRotate)
     ON_UPDATE_COMMAND_UI(ID_EDIT_ROTATE, &CMainFrame::OnUpdateEditRotate)
     ON_COMMAND(ID_EDIT_TIMELINEPROPERTIES, &CMainFrame::OnEditTimelineproperties)
+	ON_COMMAND(ID_MACHINE_CHANGEMACHINE, &CMainFrame::OnMachineChangemachine)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -265,4 +266,9 @@ void CMainFrame::OnEditTimelineproperties()
         dlg.Take();
         mPicture->UpdateObservers();
     }
+}
+
+void CMainFrame::OnMachineChangemachine()
+{
+	// TODO: Add your command handler code here
 }

@@ -8,6 +8,14 @@
 #include "Machine.h"
 #include "MachineFactory.h"
 #include "MachineDlg.h"
+#include "MainFrm.h"
+
+
+using namespace std;
+using namespace Gdiplus;
+
+/// Constant ratio to convert radians to degrees
+const double RtoD = 57.295779513;
 
 /**
 * Constructor
@@ -23,6 +31,12 @@ CDrawableAdapter::CDrawableAdapter(const std::wstring &name) : CDrawable(name)
 	mMachine->SetSpeed(1);
 	mMachine->SetMachineFrame(300);
 
+	CMachineDlg dlg(mMachine);
+	if (dlg.DoModal() == IDOK)
+	{
+		// A machine has been selected
+
+	}
 
 }
 	
@@ -37,7 +51,12 @@ CDrawableAdapter::~CDrawableAdapter()
 
 void CDrawableAdapter::SetMachine(int num)
 {
-	//mMachine->SetMachineNumber(num);
+	CMachineDlg dlg(mMachine);
+	if (dlg.DoModal() == IDOK)
+	{
+		// A machine has been selected
+
+	}
 }
 
 /**
@@ -63,5 +82,29 @@ void CDrawableAdapter::Draw(Gdiplus::Graphics *graphics)
 */
 bool CDrawableAdapter::HitTest(Gdiplus::Point pos)
 {
-	return false;
+	
+	double wid = mSize.X;
+	double hit = mSize.Y;
+
+
+	double testX = pos.X - mCenter.X + wid / 2;
+	double testY = pos.Y - mCenter.Y + hit / 2;
+
+	// Test to see if x, y are in the image
+	if (testX < 0 || testY < 0 || testX >= wid || testY >= hit)
+	{
+		// We are outside the image
+		return false;
+	}
+
+	else {
+		CMachineDlg dlg(mMachine);
+		if (dlg.DoModal() == IDOK)
+		{
+			
+		}
+		return true;
+	}
+
+	
 }
